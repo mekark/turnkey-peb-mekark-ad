@@ -44,7 +44,7 @@ export default function FaqTabs({ media }: { media?: ReactNode }) {
     <>
       {media && <div className="mt-5 lg:hidden">{media}</div>}
 
-      <div className="mt-6 lg:mt-0 lg:max-h-[min(80vh,720px)] lg:max-w-[949px] lg:overflow-y-auto lg:pr-3">
+      <div className="mt-6 lg:mt-0 lg:max-h-[min(80vh,720px)] lg:max-w-[949px] lg:overflow-y-auto lg:[scrollbar-width:none] lg:[&::-webkit-scrollbar]:hidden">
         {FAQS.map((f, i) => {
           const isOpen = open === i;
           return (
