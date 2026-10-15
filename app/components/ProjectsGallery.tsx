@@ -15,7 +15,7 @@ const DESKTOP = [
 function Photo({ tile, className, sizes }: { tile: { src: string; alt: string }; className: string; sizes: string }) {
   return (
     <div className={`relative overflow-hidden bg-[#d9d9d9] ${className}`}>
-      <Image src={tile.src} alt={tile.alt} fill sizes={sizes} quality={75} className="object-cover" />
+      <Image src={tile.src} alt={tile.alt} fill sizes={sizes} quality={60} className="object-cover" />
     </div>
   );
 }
