@@ -36,7 +36,7 @@ export default function WhyMekark() {
           width={617}
           height={278}
           quality={70}
-          sizes="617px"
+          sizes="385px"
           className="absolute left-0 top-[-13px] h-[278px] w-[max(617px,100%)] max-w-none object-cover"
         />
       </div>

@@ -36,15 +36,26 @@ export default function Hero() {
     fetchPriority: "high",
     className: "object-cover object-center",
   });
+  // Phones: Lighthouse picks this tall background as the LCP element. Mobile-only, so sizes ≈ 0.63x its 505px width.
+  const { props: mobileBg } = getImageProps({
+    src: "/hero/m-bg-peb.webp",
+    alt: "",
+    fill: true,
+    quality: 60,
+    sizes: "(min-width: 640px) 100vw, 320px",
+    loading: "eager",
+    fetchPriority: "high",
+    className: "object-cover",
+  });
   const { props: mobileHero } = getImageProps({
     src: "/hero/m-hero-peb.webp",
     alt: "",
     width: 1000,
     height: 599,
     quality: 70,
-    sizes: "134vw",
+    // Rendered at 134vw on phones; sizes ≈ 0.57x of that. Tablets are full width.
+    sizes: "(min-width: 640px) 100vw, 77vw",
     loading: "eager",
-    fetchPriority: "high",
     className: "absolute left-[-23.4%] top-2 w-[134%] max-w-none sm:left-0 sm:top-1/2 sm:w-full sm:-translate-y-[55%]",
   });
 
@@ -54,7 +65,11 @@ export default function Hero() {
       {/* Mobile/tablet background */}
       {/* Figma mobile: sunset steel-frame photo below the hero block, under a 40% dark wash */}
       <div className="absolute left-1/2 top-[435px] -z-20 aspect-[505/1556] w-[max(505px,100%)] -translate-x-1/2 lg:hidden">
-        <Image src="/hero/m-bg-peb.webp" alt="" fill quality={60} sizes="(min-width: 505px) 100vw, 505px" className="object-cover" />
+        <picture>
+          <source media="(min-width: 1024px)" srcSet={BLANK} />
+          {/* eslint-disable-next-line jsx-a11y/alt-text */}
+          <img {...mobileBg} />
+        </picture>
       </div>
       <div className="hero-bg absolute -z-20 hidden lg:block">
         <picture>

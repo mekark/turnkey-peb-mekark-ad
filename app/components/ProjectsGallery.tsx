@@ -41,7 +41,7 @@ export default function ProjectsGallery() {
           {/* Figma mobile (9791:1469): single column, six full-width 180px tiles, 16px gap */}
           <div className="flex flex-col gap-4 sm:hidden">
             {DESKTOP.map((tile) => (
-              <Photo key={tile.src} tile={tile} sizes="100vw" className="h-[180px] w-full" />
+              <Photo key={tile.src} tile={tile} sizes="55vw" className="h-[180px] w-full" />
             ))}
           </div>
 
