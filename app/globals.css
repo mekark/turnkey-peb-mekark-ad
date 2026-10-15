@@ -337,7 +337,7 @@ body {
     padding-top: calc(3 * var(--u));
     width: calc(700 * var(--u));
     /* the red block ends 467px below the list top: never paint past it, scroll inside instead (as in Figma) */
-    max-height: calc(460 * var(--u));
+    max-height: calc(455 * var(--u));
     overflow-y: auto;
     overscroll-behavior: contain;
     scrollbar-width: none;
@@ -361,8 +361,8 @@ body {
     width: 100%;
     align-items: center;
     gap: calc(12 * var(--u));
-    min-height: calc(55 * var(--u));
-    padding: calc(10 * var(--u)) 0 calc(10.333 * var(--u));
+    min-height: calc(60 * var(--u));
+    padding: calc(12 * var(--u)) 0 calc(13.333 * var(--u));
     text-align: left;
     color: #fff;
     font-size: calc(24 * var(--u));
@@ -370,17 +370,13 @@ body {
     line-height: calc(29.867 * var(--u));
     cursor: pointer;
   }
-  .why-acc-btn svg {
-    width: calc(30 * var(--u));
-    height: calc(30 * var(--u));
-  }
   .why-acc-desc {
-    padding: 0 0 calc(8 * var(--u)) calc(37 * var(--u));
+    padding: 0 0 calc(10 * var(--u)) calc(37 * var(--u));
     max-width: calc(663 * var(--u));
     color: #fff;
     font-size: calc(17 * var(--u));
     font-weight: 500;
-    line-height: calc(23 * var(--u));
+    line-height: normal;
   }
 }
 
