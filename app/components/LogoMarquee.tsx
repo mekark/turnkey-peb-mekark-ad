@@ -35,7 +35,7 @@ export default function LogoMarquee() {
       <p className="hero-trust-label mb-4 text-[14px] font-semibold uppercase leading-5 text-[#ed1d23] sm:text-[#fa7783] sm:mb-[31px] sm:text-[14px]">
         Trusted Across India
       </p>
-      <div className="flex flex-nowrap gap-x-3 sm:hidden" aria-label={`Trusted by ${MOBILE_LOGOS.map((l) => l.name).join(", ")}`} role="img">
+      <div className="flex flex-nowrap gap-x-[18px] sm:hidden" aria-label={`Trusted by ${MOBILE_LOGOS.map((l) => l.name).join(", ")}`} role="img">
         {MOBILE_LOGOS.map((logo) => (
           <span key={logo.name} aria-hidden="true" className="flex h-10 w-16 min-w-0 shrink items-center justify-center overflow-hidden rounded-md bg-[#f9f6f7]">
             <Image src={logo.src} alt="" width={logo.w} height={logo.h} className="max-w-none shrink-0" />

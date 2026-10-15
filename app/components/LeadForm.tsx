@@ -5,7 +5,7 @@ import { emailPattern, locationPattern, namePattern, phonePattern } from "./form
 import { useEnquirySubmit } from "./useEnquirySubmit";
 
 const field =
-  "lf-input w-full rounded-lg border border-[#e2e2e2] bg-[#f0f0f0] px-[18px] py-3.5 text-xs text-[#080808] placeholder:text-[#757575] md:h-[46px] md:py-0 md:text-[12px] focus:outline-2 focus:outline-offset-2 focus:outline-[#c4161c]";
+  "lf-input w-full rounded-lg border border-[#e2e2e2] bg-[#f0f0f0] px-[18px] py-[13px] text-xs text-[#080808] placeholder:text-[#757575] md:h-[46px] md:py-0 md:text-[12px] focus:outline-2 focus:outline-offset-2 focus:outline-[#c4161c]";
 const label = "lf-label max-md:sr-only mb-[6.6px] block text-sm leading-[19px] font-bold text-white";
 
 // Labels are visible from md up, so placeholders switch to the desktop Figma examples there.
@@ -58,7 +58,7 @@ export default function LeadForm() {
     <form
       method="post"
       onSubmit={onSubmit}
-      className="lf w-full rounded-[24px] border border-[#7a7676] bg-white/[0.01] px-5 py-6 shadow-[0_26px_88px_rgba(0,0,0,0.06)] backdrop-blur-[15px] sm:rounded-[32px] sm:border-0 sm:bg-[#101010]/85 sm:py-8 sm:shadow-[0_26px_88px_rgba(0,0,0,0.6)] sm:px-10 md:bg-white/5 md:py-11 md:backdrop-blur-[30px] xl:px-[50px]"
+      className="lf w-full rounded-[24px] border border-[#484747] bg-white/[0.01] px-5 py-6 shadow-[0_26px_88px_rgba(0,0,0,0.06)] backdrop-blur-[15px] sm:rounded-[32px] sm:border-0 sm:bg-[#101010]/85 sm:py-8 sm:shadow-[0_26px_88px_rgba(0,0,0,0.6)] sm:px-10 md:bg-white/5 md:py-11 md:backdrop-blur-[30px] xl:px-[50px]"
     >
       <h2 className="lf-title text-2xl font-extrabold leading-[normal] text-white sm:text-center md:text-[#080808]">
         Request Your Project Blueprint
@@ -93,14 +93,14 @@ export default function LeadForm() {
           </select>
         </Field>
         <Field id="details" text="Requirement Details" className="sm:col-span-2">
-          <textarea id="details" name="details" rows={3} placeholder="Enter Requirement Details" className={`${field} lf-textarea resize-none md:h-[82px] md:py-[15px] md:pl-[23px]`} />
+          <textarea id="details" name="details" rows={3} placeholder="Enter Requirement Details" className={`${field} lf-textarea block h-[44px] resize-none md:h-[82px] md:py-[15px] md:pl-[23px]`} />
         </Field>
       </div>
 
       <button
         type="submit"
         disabled={submitting}
-        className="lf-submit mt-4 h-12 w-full rounded-[10px] bg-[#c4161c] text-sm sm:mt-[26px] sm:h-[63.87px] sm:rounded-[9px] sm:text-lg font-bold text-[#f5f5f5] shadow-[0_9px_18px_rgba(196,22,28,0.3)] active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-70"
+        className="lf-submit mt-4 h-11 w-full rounded-[10px] bg-[#c4161c] text-sm sm:mt-[26px] sm:h-[63.87px] sm:rounded-[9px] sm:text-lg font-bold text-[#f5f5f5] shadow-[0_9px_18px_rgba(196,22,28,0.3)] active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-70"
       >
         {submitting ? (
           "Submitting..."
@@ -113,7 +113,7 @@ export default function LeadForm() {
           {error}
         </p>
       )}
-      <p className="lf-note mt-3 text-center text-xs leading-[18px] font-medium text-[#8a8a8a] sm:mt-3.5 sm:text-[#bfbfbf] md:tracking-[0.33px]">
+      <p className="lf-note mt-3 text-center text-xs leading-[18px] font-medium text-[#c1c1c1] sm:mt-3.5 sm:text-[#bfbfbf] md:tracking-[0.33px]">
         100% Transparent Consultation with single point project support
       </p>
     </form>

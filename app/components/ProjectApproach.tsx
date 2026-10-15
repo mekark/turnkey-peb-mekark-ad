@@ -15,8 +15,8 @@ const icon = {
 
 const STEPS: { title: string; text: string; icon: ReactNode }[] = [
   {
-    title: "Site & Feasibility Study",
-    text: "Soil testing, approvals, utility availability, and budget checks.",
+    title: "PEB Shop Drawings",
+    text: "Finalize structural connections, member details and approved fabrication drawings.",
     icon: (
       <svg {...icon}>
         <rect x="8" y="2" width="8" height="4" rx="1" />
@@ -26,57 +26,63 @@ const STEPS: { title: string; text: string; icon: ReactNode }[] = [
     ),
   },
   {
-    title: "Layout & Engineering",
-    text: "Engineered around your process flow, machinery loads, and material movement.",
+    title: "Steel BOM & Nesting",
+    text: "Prepare material quantities, cutting lists and optimized steel layouts.",
     icon: (
       <svg {...icon}>
-        <path d="m12.99 6.74 1.93 3.44" />
-        <path d="M19.136 12a10 10 0 0 1-14.271 0" />
-        <path d="m21 21-2.16-3.84" />
-        <path d="m3 21 8.02-14.26" />
-        <circle cx="12" cy="5" r="2" />
+        <path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z" />
+        <path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12" />
+        <path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17" />
       </svg>
     ),
   },
   {
-    title: "Factory Fabrication",
-    text: "Precision-made columns, rafters, and purlins, made in-house.",
+    title: "CNC Steel Cutting",
+    text: "Cut and fabricate built-up PEB columns and rafters.",
     icon: (
       <svg {...icon}>
-        <path d="M12 16h.01M16 16h.01M8 16h.01" />
-        <path d="M3 19a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.5a.5.5 0 0 0-.769-.422L15 10.5V8.5a.5.5 0 0 0-.769-.422L9 11.5V5a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1z" />
+        <path d="M3 7V5a2 2 0 0 1 2-2h2" />
+        <path d="M17 3h2a2 2 0 0 1 2 2v2" />
+        <path d="M21 17v2a2 2 0 0 1-2 2h-2" />
+        <path d="M7 21H5a2 2 0 0 1-2-2v-2" />
+        <path d="M7 12h10" />
       </svg>
     ),
   },
   {
-    title: "On-Site Erection",
-    text: "Quick structural assembly with minimal site disruption.",
+    title: "PEB Assembly & Welding",
+    text: "Weld plates, stiffeners and structural connection components.",
     icon: (
       <svg {...icon}>
-        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z" />
+        <path d="M7 10H6a4 4 0 0 1-4-4 1 1 0 0 1 1-1h4" />
+        <path d="M7 5a1 1 0 0 1 1-1h13a1 1 0 0 1 1 1 7 7 0 0 1-7 7H8a1 1 0 0 1-1-1z" />
+        <path d="M9 12v5" />
+        <path d="M15 12v5" />
+        <path d="M5 20a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3 1 1 0 0 1-1 1H6a1 1 0 0 1-1-1" />
       </svg>
     ),
   },
   {
-    title: "Quality Checks",
-    text: "Inspection, installation & compliance checks.",
+    title: "Fabrication QA/QC",
+    text: "Inspect dimensions, welds, holes and surface finish.",
     icon: (
       <svg {...icon}>
-        <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
-        <path d="m9 12 2 2 4-4" />
+        <rect x="8" y="2" width="8" height="4" rx="1" />
+        <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+        <path d="m9 14 2 2 4-4" />
       </svg>
     ),
   },
   {
-    title: "Handover & Support",
-    text: "Snag clearance, documentation, and after-sales support.",
+    title: "PEB Dispatch Sequencing",
+    text: "Mark, bundle and dispatch fabricated members by project sequence.",
     icon: (
       <svg {...icon}>
-        <path d="m11 17 2 2a1 1 0 1 0 3-3" />
-        <path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4" />
-        <path d="m21 3 1 11h-2" />
-        <path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3" />
-        <path d="M3 4h8" />
+        <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2" />
+        <path d="M15 18H9" />
+        <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14" />
+        <circle cx="17" cy="18" r="2" />
+        <circle cx="7" cy="18" r="2" />
       </svg>
     ),
   },
@@ -88,10 +94,10 @@ export default function ProjectApproach() {
       <div className="pa-inner mx-auto max-w-[1920px] px-5 py-8 md:px-10 md:py-16 xl:p-20">
         <div className="max-w-[1015px] xl:max-w-none">
           <h2 className="pa-title text-[26px] font-bold leading-[34px] text-[#0f172a] sm:text-[52px] sm:leading-[1.11] xl:text-[66px] xl:leading-[73.333px]">
-            Our Turnkey <span className="text-[#ed1d23]">Manufacturing Plant Construction</span>
+            Our <span className="text-[#ed1d23]">PEB Manufacturing</span> Process
           </h2>
           <p className="pa-sub mt-3 text-sm leading-5 text-[#64748b] sm:mt-4 md:text-[20px] md:leading-7 xl:max-w-[1652px] xl:text-[24px] xl:leading-[34px]">
-            As a manufacturing plant construction company, we follow a proven 6-step process to ensure on-time delivery.
+            From Approved Precision Engineering To Dispatch-Ready Steel.
           </p>
         </div>
 

@@ -3,24 +3,14 @@
 import { useState } from "react";
 import Image from "next/image";
 
-// Mobile / tablet accordion (copy differs slightly from desktop in the Figma frames).
-const MOBILE_REASONS = [
-  { title: "Turnkey Manufacturing Plant Construction", text: "One team takes accountability from design to handover. Engineered, procured and constructed all under one roof, so your manufacturing plant, production unit or processing facility stays on schedule and within budget. As a manufacturing plant EPC contractor, we remove the need to coordinate multiple vendors." },
-  { title: "In-House Structural Engineering", text: "As a manufacturing plant contractor, our engineers run BIM-based structural analysis for every structure before work begins. That makes us a dependable manufacturing building contractor for large-scale manufacturing facility construction, with fewer on-site design changes" },
-  { title: "Foundations Built for Your Machinery", text: "We design foundations around your heavy machinery, press and CNC loads, overhead cranes, vibration limits and floor loads. As a manufacturing unit construction company, we size footings, pedestals and machine plinths for safe load transfer and stable equipment alignment." },
-  { title: "Proven Track Record", text: "We have completed 200+ industrial and commercial construction projects with a high customer rating. Repeat orders from manufacturers, industrial groups and MSME units, across manufacturing unit construction and turnkey manufacturing plant construction, show our reliability." },
-  { title: "Fully Automated Steel Production", text: "The latest automation ensures consistency and reduces human error. Our automated manufacturing process will cut, weld, and finish all members of your structure to the same specifications, ensuring consistent quality for each component." },
-  { title: "Inspection Before Handover", text: "ISO 9001:2015 and CE-certified processes support fabrication quality with documentation your project and compliance teams can verify." },
-];
-
-// Desktop accordion: x / w are the staggered left offset and row width in Figma px.
+// Shared by the mobile / tablet and desktop accordions.
 const REASONS = [
-  { title: "Turnkey Manufacturing Plant Construction", x: 0, w: 700, text: "One team takes accountability from design to handover. Engineered, procured and constructed all under one roof, so your manufacturing plant, production unit or processing facility stays on schedule and within budget. As a manufacturing plant EPC contractor, we remove the need to coordinate multiple vendors." },
-  { title: "In-House Structural Engineering", x: 28, w: 672, text: "As a manufacturing plant contractor, our engineers run BIM-based structural analysis for every structure before work begins. That makes us a dependable manufacturing building contractor for large-scale manufacturing facility construction, with fewer on-site design changes" },
-  { title: "Foundations Built for Your Machinery", x: 55, w: 645, text: "We design foundations around your heavy machinery, press and CNC loads, overhead cranes, vibration limits and floor loads. As a manufacturing unit construction company, we size footings, pedestals and machine plinths for safe load transfer and stable equipment alignment." },
-  { title: "Proven Track Record", x: 55, w: 645, text: "We have completed 200+ industrial and commercial construction projects with a high customer rating. Repeat orders from manufacturers, industrial groups and MSME units, across manufacturing unit construction and turnkey manufacturing plant construction, show our reliability." },
-  { title: "Safety & Cost Clarity", x: 28, w: 672, text: "Modular formwork, routine site safety checks and clear, itemised pricing keep our manufacturing plant construction sites safe, organised and free of cost surprises." },
-  { title: "Inspection Before Handover", x: 0, w: 700, text: "We inspect the structure, construction quality and statutory compliance before handover. For manufacturing plants with clean rooms, process utilities or temperature-controlled zones, we also check the building before machinery installation and utility fit-out begins." },
+  { title: "40,000 MT Annual Capacity", text: "Procurement to PEB building manufacturer - pre engineered building contractor, pre-fabricated building constructor in erection of engineered steel buildings. Own manufacturing facility. Steel is pre engineered, pre-fabricated - peb building manufacturer, Turnkey PEB contractors & PEB steel structure building constructors." },
+  { title: "6-Lakh Sq.Ft. Manufacturing Facility", text: "In-house steel cutting, welding and fabrication keep PEB production within Mekark's own facility." },
+  { title: "In-House PEB Engineering", text: "As a PEB building manufacturer, Mekark converts approved structural designs into fabrication-ready drawings and steel details." },
+  { title: "CNC Steel Fabrication", text: "CNC processing maintains cutting accuracy across PEB columns, rafters and repeated steel components." },
+  { title: "PEB Fabrication Quality Checks", text: "Material specifications, welds, member dimensions and protective finishes are checked before dispatch." },
+  { title: "Project-Wise Steel Supply", text: "Fabricated PEB members are identified, bundled and dispatched according to approved building and delivery sequences." },
 ];
 
 export default function WhyMekark() {
@@ -70,12 +60,12 @@ export default function WhyMekark() {
             Choose Mekark
           </h2>
           <p className="why-sub mt-3 text-xs leading-[19px] text-[#424242] sm:mt-4 sm:text-base sm:leading-7 sm:text-white/90 lg:text-[#424242]">
-            India&apos;s Leading Manufacturing Plant Construction Company
+            A PEB steel manufacturer with in-house engineering, large Scale fabrication and project-wise steel supply.
           </p>
         </div>
 
         <ul className="mt-[15px] sm:mt-8 lg:hidden">
-          {MOBILE_REASONS.map((r, i) => (
+          {REASONS.map((r, i) => (
             <li key={r.title} className="border-b border-[#e58282] py-2.5 first:pt-0 last:border-b-0 last:pb-0 sm:border-[#e2e2e2]">
               <button
                 type="button"
@@ -115,7 +105,7 @@ export default function WhyMekark() {
 
         <ul className="why-acc hidden lg:block">
           {REASONS.map((r, i) => (
-            <li key={r.title} data-open={open === i} style={{ "--x": r.x, "--w": r.w } as React.CSSProperties} className="why-acc-item">
+            <li key={r.title} data-open={open === i} className="why-acc-item">
               <button
                 type="button"
                 id={`why-btn-${i}`}

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image, { getImageProps } from "next/image";
 import LeadForm from "./LeadForm";
 import LogoMarquee from "./LogoMarquee";
 import { PHONE_NUMBER, WHATSAPP_URL } from "./contact";
@@ -6,23 +6,12 @@ import { PHONE_NUMBER, WHATSAPP_URL } from "./contact";
 const PHONE = `+91${PHONE_NUMBER}`;
 const WHATSAPP = WHATSAPP_URL;
 
+// Row-major, as laid out in the Figma 2x2 grid.
 const POINTS = [
-  "Automotive, EV, Electronics, Electrical & Semiconductor.",
-  "Renewable Energy, Engineering,Electrical Vehicle.",
-  "Clean-Tech, Engineering, Machinery & Heavy Manufacturing.",
-  "Pharmaceutical, Chemical & Life Sciences.",
-  "Metals, Steel, Building Materials, Packaging & Plastics.",
-  "Textile, Apparel, Leather, Food, Beverage, FMCG.",
-];
-
-// Row-major, as laid out in the Figma 2x3 grid.
-const DESKTOP_POINTS = [
-  "Automotive, EV, Electronics, Electrical & Semiconductor.",
-  "Renewable Energy, Engineering,Electrical Vehicle.",
-  "Cold Storage & Clean Rooms, Machinery & Heavy Manufacturing.",
-  "Textile, Pharmaceutical, Chemical & Life Sciences.",
-  "Metals, Steel, Building Materials, Packaging & Plastics, Logistics.",
-  "Apparel, Leather, Food Processing, Beverage, FMCG.",
+  "Warehouse, Logistics, Cold Storages, Clean Rooms",
+  "Factories, Industries, Plants, Manufacturing Units",
+  "Malls, Auditorium, Convention Halls, IT & Data Center",
+  "Multi Storey bulidings, Schools, Colleges, Hospitals",
 ];
 
 const STATS = [
@@ -32,27 +21,49 @@ const STATS = [
   { value: "175", accent: "+", label: "Engineering Team" },
 ];
 
+// 1x1 transparent GIF: the <source> for the viewport where an eager hero image is hidden, so it costs nothing there.
+const BLANK = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
+
 export default function Hero() {
+  // Only the hero image visible in each viewport gets eager + fetchPriority="high" (the LCP image).
+  const { props: desktopBg } = getImageProps({
+    src: "/hero/bg-peb.webp",
+    alt: "",
+    fill: true,
+    quality: 60,
+    sizes: "95vw",
+    loading: "eager",
+    fetchPriority: "high",
+    className: "object-cover object-center",
+  });
+  const { props: mobileHero } = getImageProps({
+    src: "/hero/m-hero-peb.webp",
+    alt: "",
+    width: 1000,
+    height: 599,
+    quality: 70,
+    sizes: "134vw",
+    loading: "eager",
+    fetchPriority: "high",
+    className: "absolute left-[-23.4%] top-2 w-[134%] max-w-none sm:left-0 sm:top-1/2 sm:w-full sm:-translate-y-[55%]",
+  });
+
   return (
     <section id="top" className="hero relative isolate z-40 overflow-hidden bg-[#060606] text-white">
-      {/* Figma: 1697x1129 image pinned right (88.4% of 1920), 48px cropped at top */}
+      {/* Figma: 1813x1020 image pinned right, overflowing 390px past the edge */}
       {/* Mobile/tablet background */}
-      <div className="absolute inset-0 -z-20 lg:hidden">
-        <Image src="/hero/m-bg.webp" alt="" fill quality={60} sizes="100vw" className="object-cover object-top" />
+      {/* Figma mobile: sunset steel-frame photo below the hero block, under a 40% dark wash */}
+      <div className="absolute left-1/2 top-[435px] -z-20 aspect-[505/1556] w-[max(505px,100%)] -translate-x-1/2 lg:hidden">
+        <Image src="/hero/m-bg-peb.webp" alt="" fill quality={60} sizes="(min-width: 505px) 100vw, 505px" className="object-cover" />
       </div>
-      <div className="hero-bg absolute -z-20 hidden lg:right-0 lg:top-[-48px] lg:block lg:h-[1129px] lg:w-[88.4%]">
-        <Image
-          src="/hero/bg.webp"
-          alt=""
-          fill
-          priority
-          fetchPriority="high"
-          quality={60}
-          sizes="89vw"
-          className="object-cover object-center"
-        />
+      <div className="hero-bg absolute -z-20 hidden lg:block">
+        <picture>
+          <source media="(max-width: 1023px)" srcSet={BLANK} />
+          {/* eslint-disable-next-line jsx-a11y/alt-text */}
+          <img {...desktopBg} />
+        </picture>
       </div>
-      <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_bottom,rgba(6,6,6,0.94),rgba(6,6,6,0.88)_40%,rgba(6,6,6,0.78))] lg:bg-[linear-gradient(to_right,#060606_25%,rgba(6,6,6,0.8)_43%,rgba(6,6,6,0)_88%)]" />
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_bottom,#060606_300px,rgba(6,6,6,0.96)_436px,rgba(6,6,6,0.93)_516px,rgba(6,6,6,0.88)_676px,rgba(6,6,6,0.82)_876px,rgba(6,6,6,0.71)_1076px,rgba(6,6,6,0.59)_1276px,rgba(6,6,6,0.49)_1476px,rgba(6,6,6,0.4)_1676px)] lg:bg-[linear-gradient(to_right,#060606_25%,rgba(6,6,6,0.8)_43%,rgba(6,6,6,0)_88%)]" />
 
       {/* Mobile nav: fixed bar with logo and quote button */}
       <nav
@@ -78,34 +89,32 @@ export default function Hero() {
       <div className="hero-body mx-auto max-w-[1920px] px-5 md:px-10 xl:px-20">
       <div className="hero-grid grid max-w-[1733px] items-center grid-cols-[minmax(0,1fr)] gap-4 pb-12 pt-0 sm:gap-10 sm:pt-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,560px)] lg:py-12">
         <div className="hero-left flex flex-col gap-[13px] lg:gap-6">
-          <div className="hero-pill relative z-10 flex w-fit items-center gap-2 rounded-full border border-white/20 px-3 py-1.5 max-lg:-mb-[17px] lg:gap-[10.667px] lg:border-[1.333px] lg:px-[17.333px] lg:py-[9.333px]">
+          <div className="hero-pill relative z-10 flex w-fit items-center gap-2 rounded-full border border-white/20 px-3 py-1.5 lg:gap-[10.667px] lg:border-[1.333px] lg:px-[17.333px] lg:py-[9.333px]">
             <span className="hero-dot size-2 rounded-full bg-[#e40015] lg:size-[10.667px]" />
-            <span className="hero-pill-text text-[9px] font-medium leading-4 lg:text-base lg:leading-[21.333px]">
-              <span className="lg:hidden">Turnkey Manufacturing plant construction company &amp; contractor</span>
-              <span className="hidden lg:inline">Turnkey Manufacturing plant construction company &amp; Manufacturing plant contractor</span>
+            <span className="hero-pill-text whitespace-nowrap text-[min(10px,2.6vw)] font-medium leading-4 lg:text-base lg:leading-[21.333px]">
+              <span className="lg:hidden">PEB Manufacturer &amp; Commercial, Industrial construction Company</span>
+              <span className="hidden lg:inline">PEB Manufacturer &amp; Commercial, Industrial construction Company</span>
             </span>
           </div>
 
           <div className="hero-copy hidden flex-col gap-4 lg:flex">
             <h1 className="hero-h1 flex flex-col items-start gap-[14px] text-[50px] font-bold leading-[58px]">
-              <span>Manufacturing Plant. Design to Delivery</span>
-              {/* Red box runs through "150 days"; the asterisk is a smaller superscript glyph at the end */}
-              <span className="hero-h1-box relative w-fit bg-[#ed1d23] px-[5px] text-[48px] leading-[56px]">
-                Construction & Handover - 150 days
-                <span className="hero-h1-star relative -top-3 ml-0.5 text-[30px] font-normal leading-none">*</span>
+              <span>Build PEB. Design to Delivery.</span>
+              <span className="hero-h1-box relative w-fit bg-[#ed1d23] px-[5px] text-[54px] leading-[58px]">
+                Manufacturing &amp; Construction
               </span>
             </h1>
             <p className="hero-sub max-w-[879px] text-[22px] leading-7 text-[#a9a9a9]">
-              <span className="font-bold text-[#ed1d23]">MEKARK</span> - Builds Every Structure You Want.
+              <span className="font-semibold text-[#ed1d23]">MEKARK</span> - Builds Every Structure You Want -
               <br />
-              All kinds of Manufacturing plant constructions – <span className="font-bold text-white">ALL INDIA</span>
+              All Commercial &amp; Industrial projects – <span className="font-bold text-white">ALL INDIA</span>
             </p>
           </div>
 
           <div className="hero-copy hidden flex-col gap-4 lg:flex">
-            <p className="hero-sub text-[22px] font-bold leading-7 text-[#f3f3f3]">In-House PEB Manufacturing - Civil - PEB – MEP - Turnkey EPC.</p>
-            <ul className="hero-points grid gap-x-5 gap-y-4 text-[18px] leading-5 text-[#f7f7f7]">
-              {DESKTOP_POINTS.map((p) => (
+            <p className="hero-sub text-[22px] font-semibold leading-7 text-[#f3f3f3]">In-House Manufacturing - PEB Erection - Turnkey EPC.</p>
+            <ul className="hero-points grid gap-x-5 gap-y-4 text-[18px] leading-5 text-white/70">
+              {POINTS.map((p) => (
                 <li key={p} className="flex items-center gap-2">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" className="size-6 shrink-0">
                     <path d="M9 18l6-6-6-6" stroke="#E40015" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -117,28 +126,31 @@ export default function Hero() {
           </div>
 
           <div className="flex flex-col gap-3 lg:hidden">
-            <div className="relative -mx-5 h-[252px] overflow-hidden px-5 pt-2.5 md:-mx-10 md:px-10">
+            <div className="relative -mx-5 h-[277px] overflow-hidden px-5 pt-2.5 md:-mx-10 md:px-10">
               <div aria-hidden="true" className="absolute inset-0">
-                <Image src="/hero/m-hero-2.webp" alt="" fill priority quality={70} sizes="100vw" className="object-cover object-top" />
-                <div className="absolute inset-x-0 top-0 h-[135px] bg-gradient-to-b from-[#060606] to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 h-[47px] bg-gradient-to-b from-transparent to-[#1e1e1e]" />
+                <picture>
+                  <source media="(min-width: 1024px)" srcSet={BLANK} />
+                  {/* eslint-disable-next-line jsx-a11y/alt-text */}
+                  <img {...mobileHero} />
+                </picture>
+                <div className="absolute inset-x-0 top-0 h-[115px] bg-[linear-gradient(180deg,#070707_10.9%,rgba(62,62,62,0.65)_54.2%,rgba(105,105,105,0)_100%)]" />
               </div>
               <h1 className="relative max-w-[879px] font-bold">
-                <span className="block text-[28px] leading-[31px] sm:text-[44px] sm:leading-[1.1]">Manufacturing Plant.</span>
-                <span className="block text-sm leading-[18px] sm:text-2xl sm:leading-8">Design to Delivery</span>
+                <span className="block text-[30px] leading-[28px] sm:text-[44px] sm:leading-[1.1]">Build PEB.</span>
+                <span className="block text-[30px] leading-[28px] sm:text-2xl sm:leading-8">Design to Delivery.</span>
               </h1>
-              <p className="absolute left-0 top-[220px] flex h-[23px] w-fit items-center bg-[#c4161c] pl-5 pr-4 text-sm font-bold text-white md:left-0 md:pl-10">
-                Construction & Handover - 150 days<span className="relative -top-1 text-xs font-normal">*</span>
+              <p className="absolute left-0 top-[75px] flex h-[23px] sm:top-[100px] w-fit items-center bg-[#c4161c] pl-5 pr-4 text-sm font-bold text-white md:left-0 md:pl-10">
+                Manufacturing &amp; Construction
               </p>
             </div>
-            <div className="text-[13px] text-[#f3f3f3] md:text-[20px] md:leading-7 md:text-[#a9a9a9]">
+            <div className="text-[14px] leading-[19px] text-[#f3f3f3] md:text-[20px] md:leading-7 md:text-[#a9a9a9]">
               <p>
-                <span className="text-[#ed1d23]">MEKARK</span> - Builds Every Structure You Want.
+                <span className="font-bold text-[#c4161c]">MEKARK</span> - Builds Every Structure You Want -
                 <br />
-                All kinds of Manufacturing plant constructions – <span className="font-bold text-white">ALL INDIA</span>
+                All Commercial &amp; Industrial projects – <span className="font-bold text-white">ALL INDIA</span>
               </p>
             </div>
-            <p className="text-[13px] font-bold text-white md:text-[20px]">In-House PEB Manufacturing - Civil - PEB – MEP - Turnkey EPC.</p>
+            <p className="text-[14px] font-semibold leading-[19px] text-[#f3f3f3] md:text-[20px] md:text-white">In-House Manufacturing - PEB Erection - Turnkey EPC.</p>
           </div>
 
           <ul className="grid gap-x-6 gap-y-1.5 text-xs font-medium text-white/70 sm:grid-cols-2 sm:gap-y-4 sm:text-base sm:font-normal lg:hidden">
@@ -154,9 +166,9 @@ export default function Hero() {
 
           <LogoMarquee />
 
-          <dl className="hero-stats grid grid-cols-2 gap-3 sm:flex sm:w-fit sm:flex-wrap sm:gap-x-12 sm:gap-y-6 sm:border-t sm:border-[#e2e2e2] sm:py-4">
+          <dl className="hero-stats grid grid-cols-2 gap-x-3 gap-y-[14px] sm:flex sm:w-fit sm:flex-wrap sm:gap-x-12 sm:gap-y-6 sm:border-t sm:border-[#e2e2e2] sm:py-4">
             {STATS.map((s) => (
-              <div key={s.label} className="flex flex-col-reverse justify-end gap-1 rounded-[10px] border border-white/[0.08] bg-[#1a1a1a] px-4 py-3 min-[380px]:px-5 sm:gap-[5.3px] sm:rounded-none sm:border-0 sm:bg-transparent sm:p-0">
+              <div key={s.label} className="flex flex-col-reverse justify-end gap-1 rounded-[10px] border border-white/[0.08] bg-[#1a1a1a] px-4 py-[11px] min-[380px]:px-5 sm:gap-[5.3px] sm:rounded-none sm:border-0 sm:bg-transparent sm:p-0">
                 <dt className="text-[10px] font-semibold uppercase text-[#9a9a9a] sm:text-base">{s.label}</dt>
                 <dd className="whitespace-nowrap text-xl font-extrabold leading-[normal] min-[380px]:text-2xl sm:text-[42px]">
                   {s.value}
@@ -180,7 +192,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div id="quote" className="scroll-mt-16 max-sm:px-4">
+        <div id="quote" className="scroll-mt-16 max-sm:px-4 max-sm:pt-[21px]">
           <LeadForm />
         </div>
 

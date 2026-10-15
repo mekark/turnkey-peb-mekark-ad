@@ -8,13 +8,6 @@ const field =
   "w-full rounded-lg border border-[#e2e2e2] bg-[#f0f0f0] px-4 py-3 text-xs text-[#080808] placeholder:text-[#757575] focus:outline-2 focus:outline-offset-2 focus:outline-[#c4161c]";
 const label = "max-md:sr-only mb-1.5 block text-sm font-bold tracking-[0.3px] text-[#5a5a5a]";
 
-const points = [
-  "Expert review of your factory requirements",
-  "Practical cost and timeline guidance",
-  "Turnkey design, build & handover support",
-  "Dedicated project team follow-up",
-];
-
 function Field({
   id,
   text,
@@ -105,31 +98,14 @@ export default function Cta() {
         <div className="cta-grid grid grid-cols-[minmax(0,1fr)] items-center gap-[19px] sm:gap-10">
           <div>
             <span className="cta-chip inline-flex rounded-full border border-[#fcd5d0] bg-[#feeae7] px-[18px] py-1 text-[10px] font-semibold leading-normal text-[#cc000a] sm:px-5 sm:py-[9px] sm:text-base sm:leading-[26px]">
-              Start Your Project
+              Ready to Build?
             </span>
             <h2 className="cta-title mt-3.5 text-[28px] font-extrabold leading-[34px] text-white sm:mt-6 sm:text-[clamp(36px,9vw,64px)] sm:leading-[1.05]">
-              Get a
-              <br />
-              <span className="text-[#cc000a] sm:text-[#ed1d23]">Free Consultation</span>
+              Start Your PEB Project <span className="text-[#cc000a] sm:text-[#ed1d23]">Today</span>
             </h2>
             <p className="cta-sub mt-3 max-w-[837px] text-sm font-medium leading-normal text-white/65 sm:mt-6 sm:text-lg sm:leading-[1.55]">
-              Tell us about your factory or manufacturing project. Our team will review your requirements and get back
-              with a practical plan.
+              Share your requirement — our engineering team responds with a layout, BOQ and timeline. Response within 2 hours.
             </p>
-
-            <ul className="cta-points mt-3.5 grid gap-x-8 gap-y-3.5 sm:mt-8 sm:grid-cols-2 sm:gap-y-[18px]">
-              {points.map((p) => (
-                <li key={p} className="flex items-center gap-4 text-sm font-medium text-[#f4f4f4] sm:text-base sm:font-semibold sm:text-white">
-                  <span
-                    aria-hidden="true"
-                    className="cta-tick flex size-5 shrink-0 items-center justify-center rounded-full bg-[#c4161c]/50 text-[9px] sm:size-[37px] sm:text-[17px] text-[#f9f9f9]"
-                  >
-                    ✓
-                  </span>
-                  {p}
-                </li>
-              ))}
-            </ul>
 
             <div className="cta-cards mt-[19px] flex max-w-[693px] flex-col gap-3 sm:mt-10 sm:gap-5">
               <ContactCard

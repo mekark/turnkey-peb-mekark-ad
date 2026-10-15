@@ -3,7 +3,7 @@ import FaqTabs from "./FaqTabs";
 
 export default function Faq() {
   return (
-    <section className="overflow-x-clip bg-white">
+    <section className="overflow-x-clip bg-[#f9f6f7]">
       <div className="mx-auto max-w-[1920px] px-5 py-8 sm:py-12 md:px-10 md:py-16 xl:px-20 xl:py-[63px]">
         <div className="grid grid-cols-[minmax(0,1fr)] items-center gap-10 lg:flex lg:justify-between lg:gap-8">
           {/* Desktop: badge, two-line heading and illustration on the left */}
@@ -19,7 +19,7 @@ export default function Faq() {
             </div>
             <div className="relative aspect-[684/456] w-full max-w-[684px]">
               <Image
-                src="/hero/faq-d.webp"
+                src="/hero/faq-peb.webp"
                 alt="Illustration of a modern red and white manufacturing facility"
                 fill
                 quality={75}
@@ -42,7 +42,7 @@ export default function Faq() {
               media={
                 <div className="relative mx-auto aspect-[1536/1024] w-full max-w-[560px]">
                   <Image
-                    src="/hero/faq-d.webp"
+                    src="/hero/faq-peb.webp"
                     alt="Illustration of a modern red and white manufacturing facility"
                     fill
                     quality={75}

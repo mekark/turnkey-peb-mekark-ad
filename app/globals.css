@@ -41,9 +41,10 @@ body {
     --u: min(0.0520833vw, 1px);
   }
   .hero-bg {
-    top: calc(-48 * var(--u));
-    width: calc(1697 * var(--u));
-    height: calc(1129 * var(--u));
+    top: calc(-2.67 * var(--u));
+    right: calc(-390 * var(--u));
+    width: calc(1813.333 * var(--u));
+    height: calc(1020 * var(--u));
   }
   .hero-header {
     height: calc(80 * var(--u));
@@ -89,25 +90,19 @@ body {
     gap: calc(16 * var(--u));
   }
   .hero-h1 {
-    gap: calc(14 * var(--u));
-    font-size: calc(50 * var(--u));
+    gap: calc(20 * var(--u));
+    font-size: calc(54 * var(--u));
     line-height: calc(58 * var(--u));
     white-space: nowrap;
   }
-  /* red box hugs the full line, ending just after the asterisk */
+  /* red box hugs the full line (Figma: 59 tall, 5px side padding) */
   .hero-h1-box {
     width: fit-content;
-    height: calc(59 * var(--u));
-    padding: 0 calc(8 * var(--u)) 0 calc(5 * var(--u));
-    font-size: calc(48 * var(--u));
-    line-height: calc(54.66 * var(--u));
+    height: calc(64 * var(--u));
+    padding: 0 calc(5 * var(--u)) calc(8 * var(--u));
+    font-size: calc(54 * var(--u));
+    line-height: calc(52 * var(--u));
     white-space: nowrap;
-  }
-  .hero-h1-star {
-    top: calc(-14 * var(--u));
-    margin-left: calc(2 * var(--u));
-    font-size: calc(30 * var(--u));
-    line-height: 1;
   }
   .hero-sub {
     max-width: none;
@@ -116,20 +111,16 @@ body {
   }
   .hero-points {
     grid-template-columns: repeat(2, max-content);
-    column-gap: calc(20 * var(--u));
-    row-gap: calc(16 * var(--u));
+    column-gap: calc(24 * var(--u));
+    row-gap: calc(20 * var(--u));
     font-size: calc(18 * var(--u));
     line-height: calc(20 * var(--u));
     white-space: nowrap;
   }
-  /* Figma: most items are 19 tall (icon overflows); items 2 and 6 hug the 24px icon, so rows are 24/19/24 */
+  /* Figma: items are 19 tall (the 24px icon overflows) */
   .hero-points li {
     height: calc(19 * var(--u));
     gap: calc(8 * var(--u));
-  }
-  .hero-points li:nth-child(2),
-  .hero-points li:nth-child(6) {
-    height: auto;
   }
   .hero-points svg {
     width: calc(24 * var(--u));
@@ -182,12 +173,17 @@ body {
     height: calc(18 * var(--u));
   }
 
+  .hero #quote {
+    position: relative;
+    left: calc(-30 * var(--u));
+  }
+
   /* Lead form (Figma "Form": 660.688 wide, 44/50 padding) */
   .hero .lf {
     padding: calc(44 * var(--u)) calc(50 * var(--u));
     border-radius: calc(31.931 * var(--u));
     background-color: rgba(0, 0, 0, 0.01);
-    box-shadow: 0 calc(26.428 * var(--u)) calc(88.092 * var(--u)) rgba(0, 0, 0, 0.6);
+    box-shadow: 0 calc(26.428 * var(--u)) calc(88.092 * var(--u)) rgba(0, 0, 0, 0.45);
   }
   .hero .lf-title {
     font-size: calc(24 * var(--u));
@@ -340,10 +336,13 @@ body {
     margin: 0 0 0 calc(31.67 * var(--u));
     padding-top: calc(3 * var(--u));
     width: calc(700 * var(--u));
+    /* the red block ends ~737px down the frame (list starts ~265): clip anything past it */
+    max-height: calc(470 * var(--u));
+    overflow: hidden;
   }
   .why-acc-item {
-    margin-left: calc(var(--x) * var(--u));
-    width: calc(var(--w) * var(--u));
+    margin-left: 0;
+    width: calc(700 * var(--u));
     border-bottom: calc(1.333 * var(--u)) solid #e58282;
   }
   .why-acc-item[data-open="true"] {
@@ -395,6 +394,7 @@ body {
   }
   .cta-title {
     margin-top: calc(25 * var(--u));
+    max-width: calc(837 * var(--u));
     font-size: calc(79.467 * var(--u));
     line-height: calc(81.6 * var(--u));
   }
@@ -403,25 +403,6 @@ body {
     max-width: calc(837 * var(--u));
     font-size: calc(24 * var(--u));
     line-height: calc(37.33 * var(--u));
-  }
-  .cta-points {
-    margin-top: calc(37 * var(--u));
-    column-gap: calc(32 * var(--u));
-    row-gap: calc(18.67 * var(--u));
-    font-size: calc(20 * var(--u));
-  }
-  .cta-points {
-    grid-template-columns: auto auto;
-  }
-  .cta-points li {
-    gap: calc(16 * var(--u));
-    font-size: calc(20 * var(--u));
-    white-space: nowrap;
-  }
-  .cta-tick {
-    width: calc(37.33 * var(--u));
-    height: calc(37.33 * var(--u));
-    font-size: calc(17.33 * var(--u));
   }
   .cta-cards {
     margin-top: calc(55 * var(--u));
