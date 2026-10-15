@@ -15,8 +15,8 @@ const icon = {
 
 const STEPS: { title: string; text: string; icon: ReactNode }[] = [
   {
-    title: "PEB Shop Drawings",
-    text: "Finalize structural connections, member details and approved fabrication drawings.",
+    title: "Scope & Feasibility",
+    text: "Confirm site, soil, building loads, utilities and project requirements.",
     icon: (
       <svg {...icon}>
         <rect x="8" y="2" width="8" height="4" rx="1" />
@@ -26,56 +26,62 @@ const STEPS: { title: string; text: string; icon: ReactNode }[] = [
     ),
   },
   {
-    title: "Steel BOM & Nesting",
-    text: "Prepare material quantities, cutting lists and optimized steel layouts.",
+    title: "Integrated Engineering",
+    text: "Coordinate structural, civil and MEP requirements before execution begins.",
     icon: (
       <svg {...icon}>
-        <path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z" />
-        <path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12" />
-        <path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17" />
+        <rect x="16" y="16" width="6" height="6" rx="1" />
+        <rect x="2" y="16" width="6" height="6" rx="1" />
+        <rect x="9" y="2" width="6" height="6" rx="1" />
+        <path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3" />
+        <path d="M12 12V8" />
       </svg>
     ),
   },
   {
-    title: "CNC Steel Cutting",
-    text: "Cut and fabricate built-up PEB columns and rafters.",
+    title: "Civil & Foundation Works",
+    text: "Execute RCC foundations, pedestals and flooring to structural requirements.",
     icon: (
       <svg {...icon}>
-        <path d="M3 7V5a2 2 0 0 1 2-2h2" />
-        <path d="M17 3h2a2 2 0 0 1 2 2v2" />
-        <path d="M21 17v2a2 2 0 0 1-2 2h-2" />
-        <path d="M7 21H5a2 2 0 0 1-2-2v-2" />
-        <path d="M7 12h10" />
+        <path d="M10 12h4" />
+        <path d="M10 8h4" />
+        <path d="M14 21v-3a2 2 0 0 0-4 0v3" />
+        <path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2" />
+        <path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16" />
       </svg>
     ),
   },
   {
-    title: "PEB Assembly & Welding",
-    text: "Weld plates, stiffeners and structural connection components.",
+    title: "In-House PEB Manufacturing",
+    text: "Fabricate approved structural steel while civil works progress on-site.",
     icon: (
       <svg {...icon}>
-        <path d="M7 10H6a4 4 0 0 1-4-4 1 1 0 0 1 1-1h4" />
-        <path d="M7 5a1 1 0 0 1 1-1h13a1 1 0 0 1 1 1 7 7 0 0 1-7 7H8a1 1 0 0 1-1-1z" />
-        <path d="M9 12v5" />
-        <path d="M15 12v5" />
-        <path d="M5 20a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3 1 1 0 0 1-1 1H6a1 1 0 0 1-1-1" />
+        <path d="M12 16h.01" />
+        <path d="M16 16h.01" />
+        <path d="M8 16h.01" />
+        <path d="M3 19a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.5a.5.5 0 0 0-.769-.421l-4.462 2.842A.5.5 0 0 1 15 10.5v-2a.5.5 0 0 0-.769-.421L9.77 10.92A.5.5 0 0 1 9 10.5V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z" />
       </svg>
     ),
   },
   {
-    title: "Fabrication QA/QC",
-    text: "Inspect dimensions, welds, holes and surface finish.",
+    title: "PEB Erection & Envelope",
+    text: "Erect frames, roofing, cladding and structural building components.",
     icon: (
       <svg {...icon}>
-        <rect x="8" y="2" width="8" height="4" rx="1" />
-        <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
-        <path d="m9 14 2 2 4-4" />
+        <rect x="2" y="6" width="20" height="8" rx="1" />
+        <path d="M17 14v7" />
+        <path d="M7 14v7" />
+        <path d="M17 3v3" />
+        <path d="M7 3v3" />
+        <path d="M10 14 2.3 6.3" />
+        <path d="m14 6 7.7 7.7" />
+        <path d="m8 6 8 8" />
       </svg>
     ),
   },
   {
-    title: "PEB Dispatch Sequencing",
-    text: "Mark, bundle and dispatch fabricated members by project sequence.",
+    title: "MEP Integration & Handover",
+    text: "Complete services, testing and project close-out under one EPC scope.",
     icon: (
       <svg {...icon}>
         <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2" />
@@ -94,10 +100,10 @@ export default function ProjectApproach() {
       <div className="pa-inner mx-auto max-w-[1920px] px-5 py-8 md:px-10 md:py-16 xl:p-20">
         <div className="max-w-[1015px] xl:max-w-none">
           <h2 className="pa-title text-[26px] font-bold leading-[34px] text-[#0f172a] sm:text-[52px] sm:leading-[1.11] xl:text-[66px] xl:leading-[73.333px]">
-            Our <span className="text-[#ed1d23]">PEB Manufacturing</span> Process
+            Our Turnkey <span className="text-[#ed1d23]">PEB Construction</span> Process
           </h2>
           <p className="pa-sub mt-3 text-sm leading-5 text-[#64748b] sm:mt-4 md:text-[20px] md:leading-7 xl:max-w-[1652px] xl:text-[24px] xl:leading-[34px]">
-            From Approved Precision Engineering To Dispatch-Ready Steel.
+            One EPC Route from Project Planning To Handover.
           </p>
         </div>
 

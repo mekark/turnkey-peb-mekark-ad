@@ -4,36 +4,36 @@ import { useState, type ReactNode } from "react";
 
 const FAQS: { q: string; a: string }[] = [
   {
-    q: "How do I choose a PEB manufacturer for a large industrial building?",
-    a: "Choose a PEB manufacturer with in-house structural engineering, suitable fabrication capacity, CNC machinery, documented quality checks and the ability to supply steel according to your project schedule. Confirm the manufacturer's actual production capacity and supply scope before placing an order.",
+    q: "What is included in turnkey PEB construction?",
+    a: "Turnkey PEB construction can include structural engineering, procurement, RCC foundations, PEB manufacturing, steel erection, roofing, cladding, MEP and fire systems, testing and final handover under one EPC scope.",
   },
   {
-    q: "What steel components does a PEB building manufacturer supply?",
-    a: "A PEB building manufacturer can supply built-up steel columns, rafters, secondary members, bracing, connection plates, bolts and specified roofing or cladding components. The exact steel package depends on the approved drawings and purchase order.",
+    q: "How do I choose a turnkey PEB contractor for an industrial project?",
+    a: "Choose a turnkey PEB contractor with structural engineering, civil execution, steel manufacturing, erection and MEP coordination capabilities. Confirm who is responsible for each project package, delivery milestones and final handover.",
   },
   {
-    q: "What information is needed for a PEB manufacturing quotation?",
-    a: "A pre engineered building manufacturer typically needs building dimensions, clear height, bay spacing, structural loads, crane requirements, project location, steel specifications and available drawings. Approved fabrication drawings or a defined design scope help establish the steel quantity and price.",
+    q: "Can a PEB turnkey contractor handle civil foundations, steel erection and MEP together?",
+    a: "Yes. A PEB turnkey contractor can coordinate RCC foundations, anchor bolts, steel erection and MEP services under one project scope. Structural loads and service requirements are planned before their respective site activities begin.",
   },
   {
-    q: "Can Mekark supply only fabricated PEB steel without site installation?",
-    a: "Mekark's PEB manufacturing scope can be discussed separately from site work. For a steel-only order, confirm whether the quotation includes structural detailing, primary and secondary members, coatings, accessories, packing and delivery.",
+    q: "What information is required for a turnkey PEB building construction project quotation?",
+    a: "Share the site location, building dimensions, clear height, structural loads, soil information, crane requirements, flooring specifications, MEP requirements and expected project schedule. These details help define the turnkey PEB EPC project scope.",
   },
   {
-    q: "How does a PEB steel manufacturer check fabrication quality?",
-    a: "PEB steel fabrication checks can cover material specifications, cutting dimensions, weld quality, connection holes, member alignment, surface preparation and protective coating requirements. Inspection documentation should be agreed upon before production.",
+    q: "What affects turnkey PEB construction cost?",
+    a: "Turnkey PEB construction cost depends on building area, structural tonnage, foundation conditions, span, height, crane loads, roofing, cladding, flooring, MEP scope and site location.",
   },
   {
-    q: "How long does PEB steel manufacturing take after drawing approval?",
-    a: "PEB manufacturing lead time depends on approved structural tonnage, material availability, fabrication complexity, production scheduling, coating specifications and dispatch requirements. The production schedule should be confirmed against the final approved drawings.",
+    q: "How long does a turnkey PEB project take from design to handover?",
+    a: "Project timelines depend on approvals, foundation complexity, steel tonnage, erection requirements and MEP scope. Coordinating in-house fabrication with ongoing civil works can help reduce delays between construction stages.",
   },
   {
-    q: "What should I compare in quotations from different PEB manufacturers?",
-    a: "Compare structural steel specifications, tonnage, design responsibility, primary and secondary members, coating systems, included accessories, fabrication quality requirements and delivery terms. A lower price per tonne may exclude components or services included in another quotation.",
+    q: "Can turnkey PEB projects include EOT cranes, mezzanines and insulated roofing?",
+    a: "Yes. Depending on the approved project scope, turnkey PEB projects can include EOT crane-support structures, mezzanine floors, insulated roofing, cladding, ventilation and other building services.",
   },
   {
-    q: "Can a PEB manufacturer handle high-tonnage orders with phased steel dispatch?",
-    a: "Yes, subject to production availability and an agreed delivery programme. Mekark's stated 40,000 MT annual production capacity supports planning for large PEB steel requirements, while phased dispatch can be scheduled around individual buildings and steel packages.",
+    q: "What should I compare when evaluating turnkey PEB contractor quotations?",
+    a: "Compare civil works, structural specifications, steel manufacturing, erection, roofing, cladding, MEP responsibilities, exclusions, testing and handover requirements. A PEB EPC contractor should clearly identify the work covered under the quoted contract.",
   },
 ];
 
@@ -44,7 +44,7 @@ export default function FaqTabs({ media }: { media?: ReactNode }) {
     <>
       {media && <div className="mt-5 lg:hidden">{media}</div>}
 
-      <div className="mt-6 lg:mt-0 lg:max-w-[949px]">
+      <div className="mt-6 lg:mt-0 lg:max-h-[min(80vh,720px)] lg:max-w-[949px] lg:overflow-y-auto lg:pr-3">
         {FAQS.map((f, i) => {
           const isOpen = open === i;
           return (

@@ -5,12 +5,12 @@ import Image from "next/image";
 
 // Shared by the mobile / tablet and desktop accordions.
 const REASONS = [
-  { title: "40,000 MT Annual Capacity", text: "Procurement to PEB building manufacturer - pre engineered building contractor, pre-fabricated building constructor in erection of engineered steel buildings. Own manufacturing facility. Steel is pre engineered, pre-fabricated - peb building manufacturer, Turnkey PEB contractors & PEB steel structure building constructors." },
-  { title: "6-Lakh Sq.Ft. Manufacturing Facility", text: "In-house steel cutting, welding and fabrication keep PEB production within Mekark's own facility." },
-  { title: "In-House PEB Engineering", text: "As a PEB building manufacturer, Mekark converts approved structural designs into fabrication-ready drawings and steel details." },
-  { title: "CNC Steel Fabrication", text: "CNC processing maintains cutting accuracy across PEB columns, rafters and repeated steel components." },
-  { title: "PEB Fabrication Quality Checks", text: "Material specifications, welds, member dimensions and protective finishes are checked before dispatch." },
-  { title: "Project-Wise Steel Supply", text: "Fabricated PEB members are identified, bundled and dispatched according to approved building and delivery sequences." },
+  { title: "Single-Point EPC Responsibility", text: "Engineering, civil works, PEB manufacturing, erection and MEP are handled under one EPC scope, with clear responsibility for each package through to handover." },
+  { title: "Reduced Vendor Coordination", text: "One contractor coordinates foundations, steel, roofing, cladding and services, so you manage fewer vendors and fewer interfaces." },
+  { title: "RCC & PEB Coordination", text: "Anchor bolts, pedestals and foundation levels are planned against structural loads before site activities begin." },
+  { title: "In-House PEB Manufacturing", text: "Structural steel is fabricated in Mekark's own facility while civil works progress on-site, helping reduce delays between construction stages." },
+  { title: "Pre-Planned MEP Integration", text: "Service requirements are coordinated with the structure before execution, so MEP and fire systems fit the building without rework." },
+  { title: "One Integrated Project Schedule", text: "Design, civil, fabrication, erection and MEP follow a single programme with defined milestones and final handover." },
 ];
 
 export default function WhyMekark() {
@@ -60,7 +60,7 @@ export default function WhyMekark() {
             Choose Mekark
           </h2>
           <p className="why-sub mt-3 text-xs leading-[19px] text-[#424242] sm:mt-4 sm:text-base sm:leading-7 sm:text-white/90 lg:text-[#424242]">
-            A PEB steel manufacturer with in-house engineering, large Scale fabrication and project-wise steel supply.
+            PEB Contractor Capability Built Around Your Project Scope
           </p>
         </div>
 

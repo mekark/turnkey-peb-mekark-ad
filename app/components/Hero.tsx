@@ -107,8 +107,8 @@ export default function Hero() {
           <div className="hero-pill relative z-10 flex w-fit items-center gap-2 rounded-full border border-white/20 px-3 py-1.5 lg:gap-[10.667px] lg:border-[1.333px] lg:px-[17.333px] lg:py-[9.333px]">
             <span className="hero-dot size-2 rounded-full bg-[#e40015] lg:size-[10.667px]" />
             <span className="hero-pill-text whitespace-nowrap text-[min(10px,2.6vw)] font-medium leading-4 lg:text-base lg:leading-[21.333px]">
-              <span className="lg:hidden">PEB Manufacturer &amp; Commercial, Industrial construction Company</span>
-              <span className="hidden lg:inline">PEB Manufacturer &amp; Commercial, Industrial construction Company</span>
+              <span className="lg:hidden">PEB Contractors &amp; Commercial, Industrial construction Company</span>
+              <span className="hidden lg:inline">PEB Contractors &amp; Commercial, Industrial construction Company</span>
             </span>
           </div>
 
@@ -116,7 +116,7 @@ export default function Hero() {
             <h1 className="hero-h1 flex flex-col items-start gap-[14px] text-[50px] font-bold leading-[58px]">
               <span>Build PEB. Design to Delivery.</span>
               <span className="hero-h1-box relative w-fit bg-[#ed1d23] px-[5px] text-[54px] leading-[58px]">
-                Manufacturing &amp; Construction
+                Contractors &amp; Construction
               </span>
             </h1>
             <p className="hero-sub max-w-[879px] text-[22px] leading-7 text-[#a9a9a9]">
@@ -155,7 +155,7 @@ export default function Hero() {
                 <span className="block text-[30px] leading-[28px] sm:text-2xl sm:leading-8">Design to Delivery.</span>
               </h1>
               <p className="absolute left-0 top-[75px] flex h-[23px] sm:top-[100px] w-fit items-center bg-[#c4161c] pl-5 pr-4 text-sm font-bold text-white md:left-0 md:pl-10">
-                Manufacturing &amp; Construction
+                Contractors &amp; Construction
               </p>
             </div>
             <div className="text-[14px] leading-[19px] text-[#f3f3f3] md:text-[20px] md:leading-7 md:text-[#a9a9a9]">

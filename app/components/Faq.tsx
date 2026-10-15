@@ -5,7 +5,7 @@ export default function Faq() {
   return (
     <section className="overflow-x-clip bg-[#f9f6f7]">
       <div className="mx-auto max-w-[1920px] px-5 py-8 sm:py-12 md:px-10 md:py-16 xl:px-20 xl:py-[63px]">
-        <div className="grid grid-cols-[minmax(0,1fr)] items-center gap-10 lg:flex lg:justify-between lg:gap-8">
+        <div className="grid grid-cols-[minmax(0,1fr)] items-center gap-10 lg:flex lg:items-start lg:justify-between lg:gap-8">
           {/* Desktop: badge, two-line heading and illustration on the left */}
           <div className="hidden w-[39.3%] shrink-0 flex-col items-center lg:flex">
             <div className="flex w-full flex-col items-start gap-[25.467px]">
