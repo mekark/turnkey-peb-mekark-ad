@@ -356,6 +356,17 @@ body {
   .why-acc-item:last-child {
     border-bottom-width: 0;
   }
+  /* Figma curve: rows step in toward the middle, right edges stay aligned */
+  .why-acc-item:nth-child(2),
+  .why-acc-item:nth-child(5) {
+    margin-left: calc(28 * var(--u));
+    width: calc(672 * var(--u));
+  }
+  .why-acc-item:nth-child(3),
+  .why-acc-item:nth-child(4) {
+    margin-left: calc(55 * var(--u));
+    width: calc(645 * var(--u));
+  }
   .why-acc-btn {
     display: flex;
     width: 100%;
