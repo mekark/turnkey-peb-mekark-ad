@@ -52,7 +52,7 @@ const STEPS: { title: string; text: string; icon: ReactNode }[] = [
     ),
   },
   {
-    title: "In-House PEB Manufacturing",
+    title: "In-House PEB Production",
     text: "Fabricate approved structural steel while civil works progress on-site.",
     icon: (
       <svg {...icon}>
@@ -80,7 +80,7 @@ const STEPS: { title: string; text: string; icon: ReactNode }[] = [
     ),
   },
   {
-    title: "MEP Integration & Handover",
+    title: "MEP Works & Handover",
     text: "Complete services, testing and project close-out under one EPC scope.",
     icon: (
       <svg {...icon}>
