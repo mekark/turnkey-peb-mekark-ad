@@ -104,9 +104,9 @@ export default function Hero() {
       <div className="hero-body mx-auto max-w-[1920px] px-5 md:px-10 xl:px-20">
       <div className="hero-grid grid max-w-[1733px] items-center grid-cols-[minmax(0,1fr)] gap-4 pb-12 pt-0 sm:gap-10 sm:pt-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,560px)] lg:py-12">
         <div className="hero-left flex flex-col gap-[13px] lg:gap-6">
-          <div className="hero-pill relative z-10 flex w-fit items-center gap-2 rounded-full border border-white/20 px-3 py-1.5 lg:gap-[10.667px] lg:border-[1.333px] lg:px-[17.333px] lg:py-[9.333px]">
+          <div className="hero-pill relative z-10 flex w-fit items-center gap-1 rounded-full border border-white/20 px-[10px] py-[6px] lg:gap-[10.667px] lg:border-[1.333px] lg:px-[17.333px] lg:py-[9.333px]">
             <span className="hero-dot size-2 rounded-full bg-[#e40015] lg:size-[10.667px]" />
-            <span className="hero-pill-text whitespace-nowrap text-[min(10px,2.6vw)] font-medium leading-4 lg:text-base lg:leading-[21.333px]">
+            <span className="hero-pill-text whitespace-nowrap text-[9px] font-medium leading-[normal] lg:text-base lg:leading-[21.333px]">
               <span className="lg:hidden">Turnkey PEB Construction &amp; EPC Construction Company</span>
               <span className="hidden lg:inline">Turnkey PEB Construction &amp; EPC Commercial, Industrial construction Company</span>
             </span>
