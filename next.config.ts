@@ -4,29 +4,6 @@ const nextConfig: NextConfig = {
   // Served at mekark.com/turnkey-peb via a rewrite on the main site.
   basePath: "/turnkey-peb",
   assetPrefix: "/turnkey-peb",
-  async redirects() {
-    return [
-      {
-        // Other hosts (e.g. the vercel.app URL) -> the app's base path.
-        source: "/",
-        destination: "/turnkey-peb",
-        basePath: false,
-        permanent: false,
-        missing: [{ type: "host", value: "turnkeypeb.mekark.com" }],
-      },
-    ];
-  },
-  async rewrites() {
-    return [
-      {
-        // Subdomain root serves the page without changing the URL.
-        source: "/",
-        destination: "/turnkey-peb",
-        basePath: false,
-        has: [{ type: "host", value: "turnkeypeb.mekark.com" }],
-      },
-    ];
-  },
   images: {
     // Finer small steps so phone images can be served close to their displayed size.
     deviceSizes: [400, 480, 560, 640, 680, 750, 828, 1080, 1200, 1920, 2048, 3840],
