@@ -7,11 +7,23 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
-        // Bare domain (e.g. turnkeypeb.mekark.com) -> the app's base path.
+        // Other hosts (e.g. the vercel.app URL) -> the app's base path.
         source: "/",
         destination: "/turnkey-peb",
         basePath: false,
         permanent: false,
+        missing: [{ type: "host", value: "turnkeypeb.mekark.com" }],
+      },
+    ];
+  },
+  async rewrites() {
+    return [
+      {
+        // Subdomain root serves the page without changing the URL.
+        source: "/",
+        destination: "/turnkey-peb",
+        basePath: false,
+        has: [{ type: "host", value: "turnkeypeb.mekark.com" }],
       },
     ];
   },
