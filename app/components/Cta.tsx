@@ -3,6 +3,7 @@
 import { emailPattern, locationPattern, namePattern, phonePattern } from "./formValidation";
 import { useEnquirySubmit } from "./useEnquirySubmit";
 import Image from "next/image";
+import { asset } from "../basePath";
 
 const field =
   "w-full rounded-lg border border-[#e2e2e2] bg-[#f0f0f0] px-4 py-3 text-xs text-[#080808] placeholder:text-[#757575] focus:outline-2 focus:outline-offset-2 focus:outline-[#c4161c]";
@@ -61,7 +62,7 @@ function ContactCard({
         {eyebrow && <span className="cta-eyebrow text-[10px] font-bold uppercase leading-4 text-[#a9a9a9] sm:text-base sm:leading-[21px]">{eyebrow}</span>}
         <span className={`cta-card-title text-white ${titleClass}`}>{title}</span>
       </span>
-      <Image src="/hero/cta-arrow.svg" alt="" width={27} height={26} className="ml-auto h-auto w-6 shrink-0 sm:w-[27px]" />
+      <Image src={asset("/hero/cta-arrow.svg")} alt="" width={27} height={26} className="ml-auto h-auto w-6 shrink-0 sm:w-[27px]" />
     </a>
   );
 }
@@ -73,12 +74,12 @@ export default function Cta() {
     <section id="contact" className="cta relative overflow-hidden bg-[#090909]">
       {/* Phone: portrait crop fading to black (Figma 8698:8862) */}
       <div className="absolute inset-x-0 top-0 h-[601px] sm:hidden">
-        <Image src="/hero/m-cta-bg.webp" alt="" fill quality={60} sizes="100vw" className="object-cover opacity-30" />
+        <Image src={asset("/hero/m-cta-bg.webp")} alt="" fill quality={60} sizes="100vw" className="object-cover opacity-30" />
       </div>
       <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-b from-transparent to-black to-[70%] sm:hidden" />
 
       <Image
-        src="/hero/cta-bg.webp"
+        src={asset("/hero/cta-bg.webp")}
         alt=""
         fill
         quality={60}
@@ -113,13 +114,13 @@ export default function Cta() {
                 eyebrow="Call Now"
                 title="+91 97909 24754"
                 titleClass="text-sm font-extrabold leading-6 sm:text-[21px] sm:leading-8"
-                icon={<Image src="/hero/cta-call.svg" alt="" width={27} height={27} className="size-6 sm:size-[27px]" />}
+                icon={<Image src={asset("/hero/cta-call.svg")} alt="" width={27} height={27} className="size-6 sm:size-[27px]" />}
               />
               <ContactCard
                 href="https://wa.me/919790924754"
                 title="WhatsApp Us Now"
                 titleClass="cta-wa-title text-sm font-bold leading-6 sm:text-[26px] sm:leading-normal"
-                icon={<Image src="/hero/whatsapp.webp" alt="" width={39} height={39} className="cta-wa size-[30px] sm:size-[39px]" />}
+                icon={<Image src={asset("/hero/whatsapp.webp")} alt="" width={39} height={39} className="cta-wa size-[30px] sm:size-[39px]" />}
               />
             </div>
           </div>

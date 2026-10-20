@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { asset } from "../basePath";
 
 const CLIENTS = [
   "VWU",
@@ -23,10 +24,10 @@ const CLIENTS = [
 
 // Mobile shows four tiles (Figma): L&T, Caterpillar, TVS, Tata.
 const MOBILE_LOGOS = [
-  { name: "L&T", src: "/hero/logo-lt.webp", w: 64, h: 35 },
-  { name: "Caterpillar", src: "/hero/logo-cat.webp", w: 48, h: 48 },
-  { name: "TVS", src: "/hero/logo-tvs.webp", w: 52, h: 53 },
-  { name: "Tata", src: "/hero/logo-tata.webp", w: 32, h: 32 },
+  { name: "L&T", src: asset("/hero/logo-lt.webp"), w: 64, h: 35 },
+  { name: "Caterpillar", src: asset("/hero/logo-cat.webp"), w: 48, h: 48 },
+  { name: "TVS", src: asset("/hero/logo-tvs.webp"), w: 52, h: 53 },
+  { name: "Tata", src: asset("/hero/logo-tata.webp"), w: 32, h: 32 },
 ];
 
 export default function LogoMarquee() {

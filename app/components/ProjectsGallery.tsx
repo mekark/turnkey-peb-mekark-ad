@@ -1,15 +1,16 @@
 import Image from "next/image";
+import { asset } from "../basePath";
 
 type Tile = { src: string; alt: string; sizes: string };
 
 // The six Figma photos, shared by mobile, tablet and desktop. `round` is the desktop-only outer-corner rounding.
 const DESKTOP = [
-  { src: "/hero/gd1.webp", alt: "Modern industrial building with a louvred facade and loading yard", round: "rounded-tl-[32px]" },
-  { src: "/hero/gd2.webp", alt: "Large white warehouse with loading docks", round: "rounded-tr-[32px]" },
-  { src: "/hero/gd3.webp", alt: "Solo Paints industrial warehouse with a glazed entrance", round: "rounded-bl-[32px]" },
-  { src: "/hero/gd4.webp", alt: "Blue steel warehouse on an industrial estate", round: "rounded-br-[32px]" },
-  { src: "/hero/gd5.webp", alt: "Aerial view of a white factory building with a long roof", round: "rounded-bl-[32px]" },
-  { src: "/hero/gd6.webp", alt: "Industrial shed with loading docks and a parked truck", round: "rounded-br-[32px]" },
+  { src: asset("/hero/gd1.webp"), alt: "Modern industrial building with a louvred facade and loading yard", round: "rounded-tl-[32px]" },
+  { src: asset("/hero/gd2.webp"), alt: "Large white warehouse with loading docks", round: "rounded-tr-[32px]" },
+  { src: asset("/hero/gd3.webp"), alt: "Solo Paints industrial warehouse with a glazed entrance", round: "rounded-bl-[32px]" },
+  { src: asset("/hero/gd4.webp"), alt: "Blue steel warehouse on an industrial estate", round: "rounded-br-[32px]" },
+  { src: asset("/hero/gd5.webp"), alt: "Aerial view of a white factory building with a long roof", round: "rounded-bl-[32px]" },
+  { src: asset("/hero/gd6.webp"), alt: "Industrial shed with loading docks and a parked truck", round: "rounded-br-[32px]" },
 ];
 
 function Photo({ tile, className, sizes }: { tile: { src: string; alt: string }; className: string; sizes: string }) {

@@ -2,6 +2,7 @@ import Image, { getImageProps } from "next/image";
 import LeadForm from "./LeadForm";
 import LogoMarquee from "./LogoMarquee";
 import { PHONE_NUMBER, WHATSAPP_URL } from "./contact";
+import { asset } from "../basePath";
 
 const PHONE = `+91${PHONE_NUMBER}`;
 const WHATSAPP = WHATSAPP_URL;
@@ -27,7 +28,7 @@ const BLANK = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAA
 export default function Hero() {
   // Only the hero image visible in each viewport gets eager + fetchPriority="high" (the LCP image).
   const { props: desktopBg } = getImageProps({
-    src: "/hero/bg-peb.webp",
+    src: asset("/hero/bg-peb.webp"),
     alt: "",
     fill: true,
     quality: 60,
@@ -38,7 +39,7 @@ export default function Hero() {
   });
   // Phones: Lighthouse picks this tall background as the LCP element. Mobile-only, so sizes ≈ 0.63x its 505px width.
   const { props: mobileBg } = getImageProps({
-    src: "/hero/m-bg-peb.webp",
+    src: asset("/hero/m-bg-peb.webp"),
     alt: "",
     fill: true,
     quality: 60,
@@ -48,7 +49,7 @@ export default function Hero() {
     className: "object-cover",
   });
   const { props: mobileHero } = getImageProps({
-    src: "/hero/m-hero-peb.webp",
+    src: asset("/hero/m-hero-peb.webp"),
     alt: "",
     width: 1000,
     height: 599,
@@ -86,7 +87,7 @@ export default function Hero() {
         className="fixed inset-x-0 top-0 z-50 flex h-14 items-center justify-between border-b border-white/10 bg-[#060606]/90 px-5 backdrop-blur-md md:hidden"
       >
         <a href="#top" aria-label="Mekark home">
-          <Image src="/hero/mekark-logo.webp" alt="Mekark" width={132} height={46} priority className="h-auto w-[88px]" />
+          <Image src={asset("/hero/mekark-logo.webp")} alt="Mekark" width={132} height={46} priority className="h-auto w-[88px]" />
         </a>
         <a href="#quote" className="rounded-lg bg-[#c4161c] px-3.5 py-2 text-xs font-semibold leading-[18px] text-[#f5f5f5] shadow-[0_6px_14px_rgba(196,22,28,0.3)]">
           Get Free Quote
@@ -95,7 +96,7 @@ export default function Hero() {
       <div aria-hidden="true" className="h-14 md:hidden" />
 
       <header className="hero-header mx-auto hidden h-20 max-w-[1920px] items-center justify-between px-5 md:flex md:px-10 xl:px-20">
-        <Image src="/hero/mekark-logo.webp" alt="Mekark" width={132} height={46} priority className="hero-logo h-auto w-[104px] md:w-[132px]" />
+        <Image src={asset("/hero/mekark-logo.webp")} alt="Mekark" width={132} height={46} priority className="hero-logo h-auto w-[104px] md:w-[132px]" />
         <a href="#quote" className="hero-quote rounded-lg bg-[#c4161c] px-5 py-2.5 text-sm leading-[22px] font-semibold text-[#f5f5f5] shadow-[0_9px_18px_rgba(196,22,28,0.3)] md:px-6 md:text-base md:leading-[22px]">
           Get Free Quote
         </a>
@@ -196,7 +197,7 @@ export default function Hero() {
           <div className="hero-ctas hidden flex-wrap gap-4 md:flex md:gap-[30px]">
             <a href={WHATSAPP} className="hero-cta flex h-[55px] items-center gap-2 rounded-full bg-white px-6 text-base font-bold text-[#e5091f]">
               WhatsApp
-              <Image src="/hero/hero-wa.svg" alt="" width={18} height={18} />
+              <Image src={asset("/hero/hero-wa.svg")} alt="" width={18} height={18} />
             </a>
             <a href={`tel:${PHONE}`} className="hero-cta flex h-[55px] items-center gap-2 rounded-full border border-white px-6 text-base font-bold">
               Call Now

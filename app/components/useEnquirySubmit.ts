@@ -1,9 +1,10 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { BASE_PATH } from "../basePath";
 
-const FORM_ENDPOINT = "/api/enquiry-form";
-const THANK_YOU_PATH = "/thank-you";
+const FORM_ENDPOINT = `${BASE_PATH}/api/enquiry-form`;
+const THANK_YOU_PATH = `${BASE_PATH}/thank-you`;
 
 // Posts a lead form to /api/enquiry-form (proxied to the Mekark mail service) and
 // redirects to the thank-you page on success. Works for every form on the page.

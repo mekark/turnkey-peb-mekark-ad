@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { asset } from "../basePath";
 
 // Shared by the mobile / tablet and desktop accordions.
 const REASONS = [
@@ -20,7 +21,7 @@ export default function WhyMekark() {
   return (
     <section className="why relative isolate overflow-hidden bg-[#e60f1a]">
       <Image
-        src="/hero/why.webp"
+        src={asset("/hero/why.webp")}
         alt="Man standing before a Mekark billboard on a high-rise construction site"
         fill
         quality={70}
@@ -31,7 +32,7 @@ export default function WhyMekark() {
       {/* Phone: fixed 249px banner (Figma crop), gradient panel below */}
       <div className="relative h-[249px] overflow-hidden bg-[#f9f6f7] sm:hidden">
         <Image
-          src="/hero/m-why.webp"
+          src={asset("/hero/m-why.webp")}
           alt="Man standing before a Mekark billboard on a high-rise construction site"
           width={617}
           height={278}
@@ -44,7 +45,7 @@ export default function WhyMekark() {
       {/* Tablet: crop of the scene on top, red panel below */}
       <div className="relative hidden aspect-[1100/865] max-h-[420px] w-full sm:block lg:hidden">
         <Image
-          src="/hero/why.webp"
+          src={asset("/hero/why.webp")}
           alt="Man standing before a Mekark billboard on a high-rise construction site"
           fill
           quality={65}

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import FaqTabs from "./FaqTabs";
+import { asset } from "../basePath";
 
 export default function Faq() {
   return (
@@ -22,7 +23,7 @@ export default function Faq() {
                 {/* Wider than the title; 54.6% lines the building up with the title center */}
                 <div className="absolute left-1/2 top-0 aspect-[684/456] w-[148%] -translate-x-[54.6%]">
                   <Image
-                    src="/hero/faq-peb.webp"
+                    src={asset("/hero/faq-peb.webp")}
                     alt="Illustration of a modern red and white manufacturing facility"
                     fill
                     quality={75}
@@ -48,7 +49,7 @@ export default function Faq() {
               media={
                 <div className="relative mx-auto aspect-[1536/1024] w-full max-w-[560px]">
                   <Image
-                    src="/hero/faq-peb.webp"
+                    src={asset("/hero/faq-peb.webp")}
                     alt="Illustration of a modern red and white manufacturing facility"
                     fill
                     quality={75}

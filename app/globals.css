@@ -29,7 +29,7 @@ body {
   flex: none;
   margin-right: calc(50 * var(--u, 1px));
   border-radius: calc(8 * var(--u, 1px));
-  background-image: url("/hero/logos.webp");
+  background-image: url("/turnkey-peb/hero/logos.webp");
   background-size: calc(1620 * var(--u, 1px)) calc(40 * var(--u, 1px));
   background-position-x: calc(var(--i) * -90 * var(--u, 1px));
   background-repeat: no-repeat;
@@ -507,7 +507,7 @@ body {
   height: 40px;
   border-radius: 6px;
   background-color: #f9f6f7;
-  background-image: url("/hero/logos.webp");
+  background-image: url("/turnkey-peb/hero/logos.webp");
   background-size: 1134px 28px;
   background-position-y: 6px;
   background-repeat: no-repeat;
