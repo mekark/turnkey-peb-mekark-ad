@@ -5,6 +5,7 @@ import { BASE_PATH } from "../basePath";
 
 const FORM_ENDPOINT = `${BASE_PATH}/api/enquiry-form`;
 const THANK_YOU_PATH = `${BASE_PATH}/thank-you`;
+export const ENQUIRY_SUBMITTED_KEY = "turnkey-peb:enquiry-submitted";
 
 // Posts a lead form to /api/enquiry-form (proxied to the Mekark mail service) and
 // redirects to the thank-you page on success. Works for every form on the page.
@@ -45,6 +46,9 @@ export function useEnquirySubmit() {
       const payload = await response.json().catch(() => null);
       if (!response.ok) throw new Error(payload?.message || "Unable to submit form.");
 
+      try {
+        sessionStorage.setItem(ENQUIRY_SUBMITTED_KEY, "1");
+      } catch {}
       window.location.href = THANK_YOU_PATH;
     } catch (err) {
       console.error(err);

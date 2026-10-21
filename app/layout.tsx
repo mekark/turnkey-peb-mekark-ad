@@ -16,9 +16,9 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Turnkey Manufacturing Plant Construction Company – EPC manufacturing plant contractor",
+  title: "Turnkey PEB Contractor | End-to-End PEB EPC Execution - Mekark",
   description:
-    "Leading Turnkey Manufacturing Plant construction EPC & Turnkey manufacturing facility construction Company – manufacturing unit construction Turnkey EPC expertise in In House PEB Manufacturing, Civil, PEB, MEP and Seamless Execution servicing the needs of Turnkey manufacturing building contractor & Turnkey manufacturing plant construction, manufacturing plant epc contractor, manufacturing building contractor, manufacturing unit construction Company",
+    "Single-point Turnkey PEB & EPC contractor. We handle structural design, civil foundations, PEB manufacturing, roofing, flooring & final handover.",
 };
 
 export const viewport: Viewport = {

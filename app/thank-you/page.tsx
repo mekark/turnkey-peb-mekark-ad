@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ThankYouGuard from "../components/ThankYouGuard";
 
 export const metadata: Metadata = {
   title: "Thank You | Mekark",
@@ -8,6 +9,7 @@ export const metadata: Metadata = {
 
 export default function ThankYouPage() {
   return (
+    <ThankYouGuard>
     <main className="min-h-screen bg-[#fafafa] px-4 py-20 sm:px-6 lg:px-8">
       <div className="mx-auto flex min-h-[calc(100vh-10rem)] max-w-3xl items-center justify-center">
         <section className="w-full rounded-[2rem] border border-[#e4e4e7] bg-white p-8 text-center shadow-[0_32px_90px_-56px_rgba(9,9,11,0.22)] sm:p-10 md:p-14">
@@ -38,5 +40,6 @@ export default function ThankYouPage() {
         </section>
       </div>
     </main>
+    </ThankYouGuard>
   );
 }
