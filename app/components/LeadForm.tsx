@@ -61,11 +61,13 @@ export default function LeadForm() {
       className="lf w-full rounded-[24px] border border-[#484747] bg-white/[0.01] px-5 py-6 shadow-[0_26px_88px_rgba(0,0,0,0.06)] backdrop-blur-[15px] sm:rounded-[32px] sm:border-0 sm:bg-[#101010]/85 sm:py-8 sm:shadow-[0_26px_88px_rgba(0,0,0,0.6)] sm:px-10 md:bg-white/5 md:py-11 md:backdrop-blur-[30px] xl:px-[50px]"
     >
       <h2 className="lf-title text-2xl font-extrabold leading-[normal] text-white sm:text-center md:text-[#080808]">
-        Request Your Project Blueprint
+      Request a Turnkey PEB EPC Proposal,
+      <br />
+      BOQ &amp; Timeline
       </h2>
-      <p className="lf-sub mt-1.5 text-sm font-medium sm:text-center leading-[19px] text-white">
+      {/* <p className="lf-sub mt-1.5 text-sm font-medium sm:text-center leading-[19px] text-white">
         Get a custom layout, cost range &amp; 150-day* timeline
-      </p>
+      </p> */}
 
       <div className="lf-fields mt-4 grid gap-x-[35px] gap-y-3 sm:mt-[26px] sm:grid-cols-2 sm:gap-y-[14px]">
         <Field id="name" text="Full Name*">

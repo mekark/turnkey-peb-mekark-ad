@@ -4,31 +4,25 @@ import { useState } from "react";
 import Image from "next/image";
 import { asset } from "../basePath";
 
-// Shared by the mobile / tablet and desktop accordions.
+// Shared by the mobile / tablet accordion and the desktop two-column list.
 const REASONS = [
-  { title: "Single-Point EPC Responsibility", text: "Engineering, civil works, PEB manufacturing, erection and MEP are handled under one EPC scope, with clear responsibility for each package through to handover." },
-  { title: "Reduced Vendor Coordination", text: "One contractor coordinates foundations, steel, roofing, cladding and services, so you manage fewer vendors and fewer interfaces." },
-  { title: "RCC & PEB Coordination", text: "Anchor bolts, pedestals and foundation levels are planned against structural loads before site activities begin." },
-  { title: "In-House PEB Manufacturing", text: "Structural steel is fabricated in Mekark's own facility while civil works progress on-site, helping reduce delays between construction stages." },
-  { title: "Pre-Planned MEP Integration", text: "Service requirements are coordinated with the structure before execution, so MEP and fire systems fit the building without rework." },
-  { title: "One Integrated Project Schedule", text: "Design, civil, fabrication, erection and MEP follow a single programme with defined milestones and final handover." },
+  { title: "True Single-Point EPC Accountability", text: "One contract covering architectural layout, civil foundation, PEB fabrication, erection, and handover." },
+  { title: "Zero Multi-Vendor Coordination Hassles", text: "Eliminate clashes between civil contractors, steel fabricators, and roofing agencies." },
+  { title: "Integrated Civil & Anchor Bolt Precision", text: "Because we handle both foundation pedestals and PEB frames, anchor bolt alignment is 100% accurate." },
+  { title: "Guaranteed 150-Day Turnkey Timeline*", text: "Synchronized CPM/Primavera project scheduling where civil works and factory steel production run in parallel." },
+  { title: "In-House 175+ Engineering & EPC Team", text: "Civil engineers, structural designers, MEP coordinators, and site safety officers under one roof." },
+  { title: "6,00,000 Sq. Ft. Captive PEB Plant", text: "No dependency on third-party steel suppliers—40,000 MT/year fabricated in-house." },
+  { title: "Industrial VDF / FM2 Flooring & Civil Works", text: "Complete execution of heavy-duty warehouse laser-screed flooring, loading bays, dock levelers, and boundary walls." },
+  { title: "Cladding, Insulation & Ventilation Systems", text: "Turnkey installation of standing seam roofs, PUF panels, ridge vents, louvers, and skylights." },
+  { title: "Fixed Lumpsum or Item-Rate Turnkey Contracts", text: "Complete budget certainty from day one with milestone-based billing." },
+  { title: "Ready-to-Operate Handover", text: "We hand over a fully tested, leak-proof, compliance-ready industrial facility ready for machinery installation." },
 ];
 
 export default function WhyMekark() {
-  const [open, setOpen] = useState<number | null>(null);
   const [mOpen, setMOpen] = useState<number | null>(null);
 
   return (
-    <section className="why relative isolate overflow-hidden bg-[#e60f1a]">
-      <Image
-        src={asset("/hero/why.webp")}
-        alt="Man standing before a Mekark billboard on a high-rise construction site"
-        fill
-        quality={70}
-        sizes="(min-width: 1024px) 100vw, 150vw"
-        className="-z-10 hidden object-cover lg:block"
-      />
-
+    <section className="why relative isolate overflow-hidden bg-[#e60f1a] lg:bg-white">
       {/* Phone: fixed 249px banner (Figma crop), gradient panel below */}
       <div className="relative h-[249px] overflow-hidden bg-[#f9f6f7] sm:hidden">
         <Image
@@ -54,18 +48,13 @@ export default function WhyMekark() {
         />
       </div>
 
-      <div className="why-panel bg-gradient-to-b from-[#fffdfd] from-[6%] to-[#e60f1a] to-[47%] px-5 pb-[30px] pt-5 sm:bg-none sm:px-10 sm:py-10 lg:absolute lg:right-0 lg:top-0 lg:p-0">
-        <div className="why-head">
-          <h2 className="why-title text-[28px] font-bold leading-[34px] text-[#030303] sm:text-[44px] sm:leading-[1.1] sm:text-white lg:text-[#030303]">
-            Why Top Industries <br />
-            Choose Mekark
-          </h2>
-          <p className="why-sub mt-3 text-xs leading-[19px] text-[#424242] sm:mt-4 sm:text-base sm:leading-7 sm:text-white/90 lg:text-[#424242]">
-            PEB Contractor Capability Built Around Your Project Scope
-          </p>
-        </div>
+      <div className="bg-gradient-to-b from-[#fffdfd] from-[6%] to-[#e60f1a] to-[47%] px-5 pb-[30px] pt-5 sm:bg-none sm:px-10 sm:py-10 lg:hidden">
+        <h2 className="text-[28px] font-bold leading-[34px] text-[#030303] sm:text-[44px] sm:leading-[1.1] sm:text-white">
+          Why Industrial Leaders Choose Mekark <br />
+          for Turnkey PEB EPC
+        </h2>
 
-        <ul className="mt-[15px] sm:mt-8 lg:hidden">
+        <ul className="mt-[15px] sm:mt-8">
           {REASONS.map((r, i) => (
             <li key={r.title} className="border-b border-[#e58282] py-2.5 first:pt-0 last:border-b-0 last:pb-0 sm:border-[#e2e2e2]">
               <button
@@ -103,43 +92,36 @@ export default function WhyMekark() {
             </li>
           ))}
         </ul>
+      </div>
 
-        <ul className="why-acc hidden lg:block">
-          {REASONS.map((r, i) => (
-            <li key={r.title} data-open={open === i} className="why-acc-item">
-              <button
-                type="button"
-                id={`why-btn-${i}`}
-                aria-expanded={open === i}
-                aria-controls={`why-panel-${i}`}
-                onClick={() => setOpen(open === i ? null : i)}
-                className="why-acc-btn"
-              >
-                <span className="w-[25px] shrink-0">{i + 1}.</span>
-                <span className="flex-1">{r.title}</span>
-                <svg
-                  width="30"
-                  height="30"
-                  viewBox="0 0 30 30"
-                  fill="none"
-                  aria-hidden="true"
-                  className={`shrink-0 transition-transform duration-300 ${open === i ? "rotate-180" : ""}`}
-                >
-                  <path d="M8 12l7 7 7-7" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
-              <div
-                className={`grid transition-[grid-template-rows,opacity] duration-300 ease-in-out ${open === i ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
-              >
-                <div className="min-h-0 overflow-hidden">
-                  <p id={`why-panel-${i}`} role="region" aria-labelledby={`why-btn-${i}`} className="why-acc-desc">
-                    {r.text}
-                  </p>
-                </div>
+      {/* Desktop: Figma two-column list around the centre image */}
+      <div className="why-d hidden lg:block">
+        <h2 className="why-d-head">
+          <span className="why-d-title">Why Industrial Leaders Choose Mekark</span>
+          <span className="why-d-title-accent">for Turnkey PEB EPC</span>
+        </h2>
+        <div className="why-d-img">
+          <Image
+            src={asset("/hero/why-d.webp")}
+            alt="Mekark turnkey PEB industrial building"
+            fill
+            quality={75}
+            sizes="(min-width: 1920px) 1078px, 56vw"
+            className="object-contain"
+          />
+        </div>
+        {/* One 5-row grid, interleaved left/right, so each row of points lines up across the two columns. */}
+        <ol className="why-d-grid">
+          {REASONS.slice(0, 5).flatMap((left, i) => [left, REASONS[i + 5]].map((r, side) => (
+            <li key={r.title} className="why-d-item">
+              <span aria-hidden="true" className="why-d-num">{String(i + 1 + side * 5).padStart(2, "0")}</span>
+              <div className="why-d-body">
+                <h3 className="why-d-h">{r.title}</h3>
+                <p className="why-d-p">{r.text}</p>
               </div>
             </li>
-          ))}
-        </ul>
+          )))}
+        </ol>
       </div>
     </section>
   );

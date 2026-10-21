@@ -96,7 +96,7 @@ const STEPS: { title: string; text: string; icon: ReactNode }[] = [
 
 export default function ProjectApproach() {
   return (
-    <section className="pa bg-[#f9f6f7]">
+    <section className="pa bg-[#f9f6f7] sm:bg-[#e0e0e0]">
       <div className="pa-inner mx-auto max-w-[1920px] px-5 py-8 md:px-10 md:py-16 xl:p-20">
         <div className="max-w-[1015px] xl:max-w-none">
           <h2 className="pa-title text-[26px] font-bold leading-[34px] text-[#0f172a] sm:text-[52px] sm:leading-[1.11] xl:text-[66px] xl:leading-[73.333px]">
@@ -139,7 +139,7 @@ export default function ProjectApproach() {
                 {String(i + 1).padStart(2, "0")}
               </span>
               <div className="flex min-w-0 flex-1 items-center gap-2.5 rounded-md bg-[#fffcfc] py-1.5 pl-2.5 pr-[9px] shadow-[-1px_1px_3px_rgba(30,30,30,0.1)] sm:contents">
-                <div className="pa-icon relative flex size-5 shrink-0 items-center justify-center sm:h-[92px] sm:w-[100px] sm:rounded-[18px] sm:border sm:border-[#e4dfe0] sm:bg-white">
+                <div className="pa-icon relative flex size-5 shrink-0 items-center justify-center sm:size-[90px] sm:rounded-full sm:border sm:border-[#e4dfe0] sm:bg-[#f5f5f5] sm:shadow-[4px_4px_7px_rgba(0,0,0,0.1)]">
                   {s.icon}
                 </div>
                 <div className="pa-text flex min-w-0 flex-col gap-px sm:gap-3">

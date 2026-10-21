@@ -1,8 +1,9 @@
 import Cta from "./components/Cta";
+import CompletedProjects from "./components/CompletedProjects";
 import Faq from "./components/Faq";
 import Hero from "./components/Hero";
 import ProjectApproach from "./components/ProjectApproach";
-import ProjectsGallery from "./components/ProjectsGallery";
+import OngoingProjects from "./components/OngoingProjects";
 import WhyMekark from "./components/WhyMekark";
 
 export default function Home() {
@@ -11,7 +12,8 @@ export default function Home() {
       <Hero />
       <ProjectApproach />
       <WhyMekark />
-      <ProjectsGallery />
+      <OngoingProjects />
+      <CompletedProjects />
       <Faq />
       <Cta />
     </main>

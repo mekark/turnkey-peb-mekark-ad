@@ -3,14 +3,18 @@ import { asset } from "../basePath";
 
 type Tile = { src: string; alt: string; sizes: string };
 
-// The six Figma photos, shared by mobile, tablet and desktop. `round` is the desktop-only outer-corner rounding.
+// The ten Figma photos, shared by mobile, tablet and desktop. `round` is the desktop-only outer-corner rounding.
 const DESKTOP = [
-  { src: asset("/hero/gd1.webp"), alt: "Modern industrial building with a louvred facade and loading yard", round: "rounded-tl-[32px]" },
-  { src: asset("/hero/gd2.webp"), alt: "Large white warehouse with loading docks", round: "rounded-tr-[32px]" },
-  { src: asset("/hero/gd3.webp"), alt: "Solo Paints industrial warehouse with a glazed entrance", round: "rounded-bl-[32px]" },
-  { src: asset("/hero/gd4.webp"), alt: "Blue steel warehouse on an industrial estate", round: "rounded-br-[32px]" },
-  { src: asset("/hero/gd5.webp"), alt: "Aerial view of a white factory building with a long roof", round: "rounded-bl-[32px]" },
-  { src: asset("/hero/gd6.webp"), alt: "Industrial shed with loading docks and a parked truck", round: "rounded-br-[32px]" },
+  { src: asset("/hero/gal-1.webp"), alt: "Massive modern warehouse logistics hub", round: "rounded-tl-[32px]" },
+  { src: asset("/hero/gal-2.webp"), alt: "Modern industrial warehouse with loading docks", round: "rounded-tr-[32px]" },
+  { src: asset("/hero/gal-3.webp"), alt: "Solo Paints industrial warehouse", round: "" },
+  { src: asset("/hero/gal-4.webp"), alt: "Blue warehouse on an industrial estate", round: "" },
+  { src: asset("/hero/gal-5.webp"), alt: "Warehouse under blue skies", round: "" },
+  { src: asset("/hero/gal-6.webp"), alt: "Warehouse at sunset in a logistics park", round: "" },
+  { src: asset("/hero/gal-7.webp"), alt: "Modern industrial warehouse exterior", round: "" },
+  { src: asset("/hero/gal-8.webp"), alt: "Solar-powered industrial complex", round: "" },
+  { src: asset("/hero/gal-9.webp"), alt: "Aerial view of a white PEB factory building with a long roof", round: "rounded-bl-[32px]" },
+  { src: asset("/hero/gal-10.webp"), alt: "Industrial PEB building with loading docks", round: "rounded-br-[32px]" },
 ];
 
 function Photo({ tile, className, sizes }: { tile: { src: string; alt: string }; className: string; sizes: string }) {
@@ -39,7 +43,7 @@ export default function ProjectsGallery() {
             </p>
           </div>
 
-          {/* Figma mobile (9791:1469): single column, six full-width 180px tiles, 16px gap */}
+          {/* Figma mobile (9791:1469): single column, full-width 180px tiles, 16px gap */}
           <div className="flex flex-col gap-4 sm:hidden">
             {DESKTOP.map((tile) => (
               <Photo key={tile.src} tile={tile} sizes="55vw" className="h-[180px] w-full" />

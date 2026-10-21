@@ -29,8 +29,8 @@ body {
   flex: none;
   margin-right: calc(50 * var(--u, 1px));
   border-radius: calc(8 * var(--u, 1px));
-  background-image: url("/turnkey-peb/hero/logos.webp");
-  background-size: calc(1620 * var(--u, 1px)) calc(40 * var(--u, 1px));
+  background-image: url("/turnkey-peb/hero/logos-3.webp");
+  background-size: calc(1350 * var(--u, 1px)) calc(40 * var(--u, 1px));
   background-position-x: calc(var(--i) * -90 * var(--u, 1px));
   background-repeat: no-repeat;
 }
@@ -42,9 +42,9 @@ body {
   }
   .hero-bg {
     top: calc(-2.67 * var(--u));
-    right: calc(-390 * var(--u));
-    width: calc(1813.333 * var(--u));
-    height: calc(1020 * var(--u));
+    right: calc(-108 * var(--u));
+    width: calc(1758 * var(--u));
+    height: calc(1017 * var(--u));
   }
   .hero-header {
     height: calc(80 * var(--u));
@@ -109,22 +109,23 @@ body {
     font-size: calc(22 * var(--u));
     line-height: calc(28 * var(--u));
   }
-  .hero-points {
-    grid-template-columns: repeat(2, max-content);
-    column-gap: calc(24 * var(--u));
-    row-gap: calc(20 * var(--u));
+  .hero-lead {
+    max-width: none;
     font-size: calc(18 * var(--u));
-    line-height: calc(20 * var(--u));
-    white-space: nowrap;
+    line-height: calc(22 * var(--u));
   }
-  /* Figma: items are 19 tall (the 24px icon overflows) */
-  .hero-points li {
-    height: calc(19 * var(--u));
+  .hero-industries {
     gap: calc(8 * var(--u));
+    margin-top: calc(12 * var(--u));
   }
-  .hero-points svg {
-    width: calc(24 * var(--u));
-    height: calc(24 * var(--u));
+  .hero-points-title {
+    font-size: calc(22 * var(--u));
+    line-height: calc(28 * var(--u));
+  }
+  .hero-points {
+    max-width: calc(820 * var(--u));
+    font-size: calc(18 * var(--u));
+    line-height: calc(22 * var(--u));
   }
   .hero-trust {
     width: calc(847 * var(--u));
@@ -253,6 +254,7 @@ body {
 @media (min-width: 1024px) {
   .pa {
     --u: min(0.0520833vw, 1px);
+    background: #e0e0e0 url("/turnkey-peb/hero/pa-bg.webp") right bottom / cover no-repeat;
   }
   .pa-inner {
     padding: calc(80 * var(--u));
@@ -274,18 +276,21 @@ body {
     row-gap: 0;
   }
   .pa-item {
-    gap: calc(52 * var(--u));
+    gap: calc(40 * var(--u));
   }
   .pa-line {
     display: block;
-    left: calc(100 * var(--u));
-    top: calc(47.67 * var(--u));
-    width: calc(100% - 60 * var(--u));
+    left: calc(45 * var(--u));
+    top: calc(45 * var(--u));
+    width: calc(100% + 27 * var(--u));
+    background: rgba(255, 255, 255, 0.7);
   }
   .pa-icon {
-    width: calc(100 * var(--u));
-    height: calc(92 * var(--u));
-    border-radius: calc(18 * var(--u));
+    width: calc(90 * var(--u));
+    height: calc(90 * var(--u));
+    border-radius: 9999px;
+    background: #f5f5f5;
+    box-shadow: calc(4 * var(--u)) calc(4 * var(--u)) calc(7 * var(--u)) rgba(0, 0, 0, 0.1);
   }
   .pa-icon svg {
     width: calc(40 * var(--u));
@@ -299,7 +304,7 @@ body {
     line-height: calc(21.333 * var(--u));
   }
   .pa-h {
-    font-size: calc(20 * var(--u));
+    font-size: calc(21 * var(--u));
     line-height: calc(24 * var(--u));
   }
   .pa-p {
@@ -309,85 +314,92 @@ body {
   }
 }
 
-/* "Why Mekark": at lg+ everything scales from the 1920x865 Figma frame (--u = 1 design px). */
+/* "Why Mekark": at lg+ everything scales from the 1920px Figma frame (--u = 1 design px). */
 @media (min-width: 1024px) {
   .why {
     --u: min(0.0520833vw, 1px);
-    height: calc(885 * var(--u));
+    background: #fff;
   }
-  .why-panel {
-    width: calc(916 * var(--u));
-    padding: calc(75.33 * var(--u)) 0 0 calc(85.33 * var(--u));
+  .why-d {
+    position: relative;
+    width: calc(1920 * var(--u));
+    margin: 0 auto;
+    min-height: calc(1060 * var(--u));
+    padding: calc(270 * var(--u)) calc(80 * var(--u)) calc(80 * var(--u));
   }
-  .why-head {
-    width: calc(783 * var(--u));
-  }
-  .why-title {
-    font-size: calc(66 * var(--u));
-    line-height: calc(69.333 * var(--u));
-  }
-  .why-sub {
-    margin-top: calc(22 * var(--u));
-    font-size: calc(20 * var(--u));
-    line-height: normal;
-  }
-  .why-acc {
-    /* panel already pads 85.33; list starts 117 design px from the panel edge */
-    margin: 0 0 0 calc(31.67 * var(--u));
-    padding-top: calc(3 * var(--u));
-    width: calc(700 * var(--u));
-    /* the red block ends 467px below the list top: never paint past it, scroll inside instead (as in Figma) */
-    max-height: calc(455 * var(--u));
-    overflow-y: auto;
-    overscroll-behavior: contain;
-    scrollbar-width: none;
-  }
-  .why-acc::-webkit-scrollbar {
-    display: none;
-  }
-  .why-acc-item {
-    margin-left: 0;
-    width: calc(700 * var(--u));
-    border-bottom: calc(1.333 * var(--u)) solid #e58282;
-  }
-  .why-acc-item[data-open="true"] {
-    border-bottom-color: #e2e2e2;
-  }
-  .why-acc-item:last-child {
-    border-bottom-width: 0;
-  }
-  /* Figma curve: rows step in toward the middle, right edges stay aligned */
-  .why-acc-item:nth-child(2),
-  .why-acc-item:nth-child(5) {
-    margin-left: calc(28 * var(--u));
-    width: calc(672 * var(--u));
-  }
-  .why-acc-item:nth-child(3),
-  .why-acc-item:nth-child(4) {
-    margin-left: calc(55 * var(--u));
-    width: calc(645 * var(--u));
-  }
-  .why-acc-btn {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    gap: calc(12 * var(--u));
-    min-height: calc(60 * var(--u));
-    padding: calc(12 * var(--u)) 0 calc(13.333 * var(--u));
-    text-align: left;
-    color: #fff;
-    font-size: calc(24 * var(--u));
+  .why-d-head {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(62 * var(--u));
+    text-align: center;
     font-weight: 700;
-    line-height: calc(29.867 * var(--u));
-    cursor: pointer;
   }
-  .why-acc-desc {
-    padding: 0 0 calc(10 * var(--u)) calc(37 * var(--u));
-    max-width: calc(663 * var(--u));
-    color: #fff;
-    font-size: calc(17 * var(--u));
-    font-weight: 500;
-    line-height: normal;
+  .why-d-title {
+    display: block;
+    font-size: calc(54 * var(--u));
+    line-height: calc(73 * var(--u));
+    color: #030303;
+  }
+  .why-d-title-accent {
+    display: block;
+    font-size: calc(40 * var(--u));
+    line-height: calc(47 * var(--u));
+    color: #ed1d23;
+  }
+  .why-d-img {
+    position: absolute;
+    left: 50%;
+    top: calc(270 * var(--u));
+    width: calc(1078 * var(--u));
+    height: calc(564 * var(--u));
+    transform: translateX(-50%);
+  }
+  .why-d-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: calc(497 * var(--u)) minmax(0, 1fr) calc(497 * var(--u));
+    column-gap: 0;
+    row-gap: calc(30 * var(--u));
+    align-items: start;
+  }
+  .why-d-item {
+    display: grid;
+    grid-template-columns: calc(86 * var(--u)) minmax(0, 1fr);
+    grid-column: 3;
+  }
+  /* left column stays clear of the image's canopy */
+  .why-d-item:nth-child(odd) {
+    grid-column: 1;
+    width: calc(465 * var(--u));
+  }
+  .why-d-num {
+    font-size: calc(60 * var(--u));
+    font-weight: 800;
+    line-height: calc(66 * var(--u));
+    letter-spacing: calc(-2.64 * var(--u));
+    color: transparent;
+    background: linear-gradient(141deg, rgba(225, 225, 225, 0) 1.2%, #e1e1e1 85%);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+  .why-d-body {
+    display: flex;
+    flex-direction: column;
+    gap: calc(10 * var(--u));
+    padding-left: calc(13 * var(--u));
+    border-left: calc(2 * var(--u)) solid #ed1d23;
+  }
+  .why-d-h {
+    font-size: calc(24 * var(--u));
+    font-weight: 600;
+    line-height: calc(26 * var(--u));
+    color: #000;
+  }
+  .why-d-p {
+    font-size: calc(18 * var(--u));
+    line-height: calc(23 * var(--u));
+    color: #6e6e6e;
   }
 }
 

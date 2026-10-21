@@ -7,13 +7,8 @@ import { asset } from "../basePath";
 const PHONE = `+91${PHONE_NUMBER}`;
 const WHATSAPP = WHATSAPP_URL;
 
-// Row-major, as laid out in the Figma 2x2 grid.
-const POINTS = [
-  "Warehouse, Logistics, Cold Storages, Clean Rooms",
-  "Factories, Industries, Plants, Manufacturing Units",
-  "Malls, Auditorium, Convention Halls, IT & Data Center",
-  "Multi Storey bulidings, Schools, Colleges, Hospitals",
-];
+const POINTS =
+  "Warehouse, Logistics, Cold Storages, Clean Rooms, Factories, Industries, Plants, Manufacturing Units, Malls, Auditorium, Convention Halls, IT & Data Center, Multi Storey bulidings, Schools, Colleges & Hospitals.";
 
 const STATS = [
   { value: "300", accent: "+", label: "Projects" },
@@ -28,7 +23,7 @@ const BLANK = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAA
 export default function Hero() {
   // Only the hero image visible in each viewport gets eager + fetchPriority="high" (the LCP image).
   const { props: desktopBg } = getImageProps({
-    src: asset("/hero/bg-peb.webp"),
+    src: asset("/hero/bg-peb-3.webp"),
     alt: "",
     fill: true,
     quality: 60,
@@ -108,37 +103,29 @@ export default function Hero() {
           <div className="hero-pill relative z-10 flex w-fit items-center gap-1 rounded-full border border-white/20 px-[10px] py-[6px] lg:gap-[10.667px] lg:border-[1.333px] lg:px-[17.333px] lg:py-[9.333px]">
             <span className="hero-dot size-2 rounded-full bg-[#e40015] lg:size-[10.667px]" />
             <span className="hero-pill-text whitespace-nowrap text-[9px] font-medium leading-[normal] lg:text-base lg:leading-[21.333px]">
-              <span className="lg:hidden">Turnkey PEB Construction &amp; EPC Construction Company</span>
-              <span className="hidden lg:inline">Turnkey PEB Construction &amp; EPC Commercial, Industrial construction Company</span>
+              Turnkey PEB Construction &amp; EPC Commercial, Industrial construction Company
             </span>
           </div>
 
           <div className="hero-copy hidden flex-col gap-4 lg:flex">
             <h1 className="hero-h1 flex flex-col items-start gap-[14px] text-[50px] font-bold leading-[58px]">
-              <span>Build PEB. Design to Delivery.</span>
+              <span>Turnkey PEB & Industrial EPC </span>
               <span className="hero-h1-box relative w-fit bg-[#ed1d23] px-[5px] text-[54px] leading-[58px]">
-                Turnkey PEB Construction
+               Contractor — Concept to Handover
               </span>
             </h1>
-            <p className="hero-sub max-w-[879px] text-[22px] leading-7 text-[#a9a9a9]">
-              <span className="font-semibold text-[#ed1d23]">MEKARK</span> - Builds Every Structure You Want -
+            <p className="hero-lead max-w-[879px] text-lg leading-[22px] text-[#a9a9a9]">
+              Single-Point Accountability for Civil Foundations, Structural Design,
               <br />
-              All Commercial &amp; Industrial projects – <span className="font-bold text-white">ALL INDIA</span>
+              In-House PEB Fabrication, Industrial Flooring &amp; Site Erection.
             </p>
           </div>
 
           <div className="hero-copy hidden flex-col gap-4 lg:flex">
-            <p className="hero-sub text-[22px] font-semibold leading-7 text-[#f3f3f3]">In-House Manufacturing - PEB Erection - Turnkey EPC.</p>
-            <ul className="hero-points grid gap-x-5 gap-y-4 text-[18px] leading-5 text-white/70">
-              {POINTS.map((p) => (
-                <li key={p} className="flex items-center gap-2">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" className="size-6 shrink-0">
-                    <path d="M9 18l6-6-6-6" stroke="#E40015" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                  <span>{p}</span>
-                </li>
-              ))}
-            </ul>
+            <div className="hero-industries flex flex-col gap-2">
+              <h2 className="hero-points-title text-[22px] font-semibold leading-7 text-[#f3f3f3]">Industries we serve :</h2>
+              <p className="hero-points max-w-[820px] text-[18px] leading-[22px] text-white/70">{POINTS}</p>
+            </div>
           </div>
 
           <div className="flex flex-col gap-3 lg:hidden">
@@ -152,33 +139,25 @@ export default function Hero() {
                 <div className="absolute inset-x-0 top-0 h-[115px] bg-[linear-gradient(180deg,#070707_10.9%,rgba(62,62,62,0.65)_54.2%,rgba(105,105,105,0)_100%)]" />
               </div>
               <h1 className="relative max-w-[879px] font-bold">
-                <span className="block text-[30px] leading-[28px] sm:text-[44px] sm:leading-[1.1]">Build PEB.</span>
-                <span className="block text-[30px] leading-[28px] sm:text-2xl sm:leading-8">Design to Delivery.</span>
+                <span className="block text-[22px] leading-[28px] sm:text-[40px] sm:leading-[1.1]">Turnkey PEB &amp; Industrial EPC</span>
               </h1>
-              <p className="absolute left-0 top-[75px] flex h-[23px] sm:top-[100px] w-fit items-center bg-[#c4161c] pl-5 pr-4 text-sm font-bold text-white md:left-0 md:pl-10">
-                Turnkey PEB Construction
+              <p className="absolute left-0 top-[48px] flex h-[23px] sm:top-[64px] w-fit items-center bg-[#c4161c] pl-5 pr-4 text-sm font-bold text-white md:left-0 md:pl-10">
+                Contractor — Concept to Handover
               </p>
             </div>
             <div className="text-[14px] leading-[19px] text-[#f3f3f3] md:text-[20px] md:leading-7 md:text-[#a9a9a9]">
               <p>
-                <span className="font-bold text-[#c4161c]">MEKARK</span> - Builds Every Structure You Want -
-                <br />
-                All Commercial &amp; Industrial projects – <span className="font-bold text-white">ALL INDIA</span>
+                Single-Point Accountability for Civil Foundations, Structural Design,
+                <br className="hidden md:block" />{" "}
+                In-House PEB Fabrication, Industrial Flooring &amp; Site Erection.
               </p>
             </div>
-            <p className="text-[14px] font-semibold leading-[19px] text-[#f3f3f3] md:text-[20px] md:text-white">In-House Manufacturing - PEB Erection - Turnkey EPC.</p>
           </div>
 
-          <ul className="grid gap-x-6 gap-y-1.5 text-xs font-medium text-white/70 sm:grid-cols-2 sm:gap-y-4 sm:text-base sm:font-normal lg:hidden">
-            {POINTS.map((p) => (
-              <li key={p} className="flex items-center gap-2 px-3 sm:items-start sm:px-0">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" className="size-[15px] shrink-0 sm:size-6">
-                  <path d="M9 18l6-6-6-6" stroke="#E40015" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-                <span className="leading-5 sm:leading-6 min-[1720px]:whitespace-nowrap">{p}</span>
-              </li>
-            ))}
-          </ul>
+          <div className="flex flex-col gap-1.5 px-3 sm:px-0 lg:hidden">
+            <h2 className="text-sm font-medium leading-5 text-white sm:text-lg sm:leading-7">Industries we serve :</h2>
+            <p className="text-xs font-medium leading-5 text-white/70 sm:text-base sm:font-normal sm:leading-6">{POINTS}</p>
+          </div>
 
           <LogoMarquee />
 
