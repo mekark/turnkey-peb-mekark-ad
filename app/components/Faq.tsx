@@ -14,15 +14,10 @@ export default function Faq() {
                 <span aria-hidden="true" className="size-2 rounded-full bg-[#e40015]" />
                 <span className="text-[15.333px] font-bold uppercase leading-[23px] tracking-[3.38px] text-[#5a5656]">faq</span>
               </span>
-              <div className="flex flex-col gap-4">
-                <h2 className="text-[clamp(40px,3.333vw,64px)] font-extrabold leading-[0.95] tracking-[-0.04em] text-[#101116]">
-                  Frequently Asked <br />
-                  <span className="text-[#e60f1a]">Questions</span>
-                </h2>
-                <p className="text-[clamp(16px,1.25vw,24px)] font-medium leading-normal text-[#64748b]">
-                  Everything you need to know about PEB construction and our manufacturing capability.
-                </p>
-              </div>
+              <h2 className="text-[clamp(40px,3.333vw,64px)] font-extrabold leading-[0.95] tracking-[-0.04em] text-[#101116]">
+                Frequently Asked <br />
+                <span className="text-[#e60f1a]">Questions</span>
+              </h2>
             </div>
             <div className="relative aspect-[463/464] w-[87%] self-center">
               <Image

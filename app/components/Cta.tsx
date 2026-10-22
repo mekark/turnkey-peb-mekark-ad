@@ -73,20 +73,16 @@ export default function Cta() {
 
   return (
     <section id="contact" className="cta relative overflow-hidden bg-[#090909]">
-      {/* Phone: portrait crop fading to black (Figma 8698:8862) */}
-      <div className="absolute inset-x-0 top-0 h-[601px] sm:hidden">
-        <Image src={asset("/hero/m-cta-bg.webp")} alt="" fill quality={60} sizes="100vw" className="object-cover opacity-30" />
+      {/* Phone: steel-frame PEB photo, 436x671 starting 223px above the section, fading to black (Figma 8353:619) */}
+      <div className="absolute left-[-2.3%] top-[-223px] aspect-[436/671] w-[111.8%] sm:hidden">
+        <Image src={asset("/hero/m-cta-bg-peb.webp")} alt="" fill quality={75} sizes="112vw" className="object-cover opacity-30" />
       </div>
       <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-b from-transparent to-black to-[70%] sm:hidden" />
 
-      <Image
-        src={asset("/hero/cta-bg.webp")}
-        alt=""
-        fill
-        quality={60}
-        sizes="100vw"
-        className="hidden object-cover opacity-30 sm:block"
-      />
+      {/* Desktop: steel-frame PEB photo starting 230px in and overflowing the right edge (Figma 7912:3249) */}
+      <div className="absolute inset-y-0 left-[12%] hidden w-[97.8%] sm:block">
+        <Image src={asset("/hero/cta-bg-peb.webp")} alt="" fill quality={75} sizes="98vw" className="object-cover opacity-30" />
+      </div>
       <div
         aria-hidden="true"
         className="absolute inset-0 hidden bg-[linear-gradient(-62.6deg,rgba(16,21,25,0)_0.65%,#080b0f_83.2%)] sm:block"
@@ -103,7 +99,9 @@ export default function Cta() {
               Ready to Build?
             </span>
             <h2 className="cta-title mt-3.5 text-[28px] font-extrabold leading-[34px] text-white sm:mt-6 sm:text-[clamp(36px,9vw,64px)] sm:leading-[1.05]">
-              Start Your PEB Project <span className="text-[#cc000a] sm:text-[#ed1d23]">Today</span>
+              Start Your PEB
+              <br />
+              Project <span className="text-[#cc000a] sm:text-[#ed1d23]">Today</span>
             </h2>
             <p className="cta-sub mt-3 max-w-[837px] text-sm font-medium leading-normal text-white/65 sm:mt-6 sm:text-lg sm:leading-[1.55]">
               Share your requirement — our engineering team responds with a layout, BOQ and timeline. Response within 2 hours.

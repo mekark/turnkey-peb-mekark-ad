@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useId, useRef, useState } from "react";
+import { useEffect, useId, useLayoutEffect, useRef, useState } from "react";
 
 // Same list as the industry dropdown on peb-new-mekark.
 export const industryOptions = [
@@ -21,6 +21,9 @@ export const sqftOptions = [
   { value: "Above 50,000 Sq.ft", label: "Above 50,000 sq.ft" },
 ];
 
+const MIN_LIST = 200;
+const MAX_LIST = 300;
+
 type Option = string | { value: string; label: string };
 
 // Custom listbox so the open list can be styled (hover/selected) like peb-new-mekark.
@@ -40,7 +43,9 @@ export default function FormSelect({
 }) {
   const [value, setValue] = useState("");
   const [open, setOpen] = useState(false);
+  const [maxHeight, setMaxHeight] = useState<number>();
   const rootRef = useRef<HTMLDivElement>(null);
+  const listRef = useRef<HTMLUListElement>(null);
   const listId = useId();
 
   const items = options.map((o) => (typeof o === "string" ? { value: o, label: o } : o));
@@ -61,6 +66,25 @@ export default function FormSelect({
       document.removeEventListener("keydown", onKeyDown);
     };
   }, [open]);
+
+  // Always open downward. The hero clips overflow, so cap the list to the room left above that clip edge
+  // (scrolling inside, never under MIN_LIST), then scroll the page if the list ends below the screen.
+  useLayoutEffect(() => {
+    if (!open || !rootRef.current || !listRef.current) return;
+    const rect = rootRef.current.getBoundingClientRect();
+    let bottom = Infinity;
+    for (let el = rootRef.current.parentElement; el; el = el.parentElement) {
+      const { overflowX, overflowY } = getComputedStyle(el);
+      if (overflowX === "visible" && overflowY === "visible") continue;
+      bottom = Math.min(bottom, el.getBoundingClientRect().bottom);
+    }
+    const room = Math.max(bottom - rect.bottom - 14, MIN_LIST); // 6px offset + breathing room
+    setMaxHeight(Math.min(room, MAX_LIST));
+  }, [open]);
+
+  useEffect(() => {
+    if (open) listRef.current?.scrollIntoView({ block: "nearest", behavior: "smooth" });
+  }, [open, maxHeight]);
 
   return (
     <div ref={rootRef} className={`relative min-w-0 ${open ? "z-30" : ""}`}>
@@ -102,9 +126,11 @@ export default function FormSelect({
 
       {open && (
         <ul
+          ref={listRef}
           id={listId}
           role="listbox"
-          className="absolute left-0 right-0 top-[calc(100%+6px)] z-50 w-full overflow-hidden rounded-[10px] border border-[#E5E5E5] bg-white py-1 shadow-[0_12px_40px_rgba(0,0,0,0.16)]"
+          style={{ maxHeight }}
+          className="absolute left-0 right-0 top-[calc(100%+6px)] z-50 w-full overflow-y-auto overscroll-contain rounded-[10px] border border-[#E5E5E5] bg-white py-1 shadow-[0_12px_40px_rgba(0,0,0,0.16)] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
           {items.map((o) => {
             const isSelected = o.value === value;
