@@ -3,6 +3,7 @@
 import { useSyncExternalStore } from "react";
 import { emailPattern, locationPattern, namePattern, phonePattern } from "./formValidation";
 import { useEnquirySubmit } from "./useEnquirySubmit";
+import FormSelect, { industryOptions, sqftOptions } from "./FormSelect";
 
 const field =
   "lf-input w-full rounded-lg border border-[#e2e2e2] bg-[#f0f0f0] px-[18px] py-[13px] text-xs text-[#080808] placeholder:text-[#757575] md:h-[46px] md:py-0 md:text-[12px] focus:outline-2 focus:outline-offset-2 focus:outline-[#c4161c]";
@@ -83,16 +84,10 @@ export default function LeadForm() {
           <input id="email" name="email" type="email" required autoComplete="email" {...emailPattern} placeholder={md ? "abcd@gmail.com" : "Enter Email Address"} className={field} />
         </Field>
         <Field id="industry" text="Industry Type*">
-          <input id="industry" name="industry" required placeholder={md ? "Enter Industry type" : "Enter your Industry type"} className={`${field} lf-pad`} />
+          <FormSelect id="industry" name="industry" options={industryOptions} placeholder={md ? "Select Industry type" : "Select your Industry type"} className={`${field} lf-pad`} />
         </Field>
         <Field id="sqft" text="Project Sq. Ft*">
-          <select id="sqft" name="sqft" required defaultValue="" className={`${field} lf-pad select-chevron`}>
-            <option value="" disabled>Select Sq.ft Requirement</option>
-            <option value="10,000 - 20,000 Sq.ft">10,000 – 20,000</option>
-            <option value="20,000 - 30,000 Sq.ft">20,000 – 30,000</option>
-            <option value="30,000 - 50,000 Sq.ft">30,000 – 50,000</option>
-            <option value="Above 50,000 Sq.ft">Above 50,000 sq.ft</option>
-          </select>
+          <FormSelect id="sqft" name="sqft" options={sqftOptions} placeholder="Select Sq.ft Requirement" className={`${field} lf-pad`} />
         </Field>
         <Field id="details" text="Requirement Details" className="sm:col-span-2">
           <textarea id="details" name="details" rows={3} placeholder="Enter Requirement Details" className={`${field} lf-textarea block h-[44px] resize-none md:h-[82px] md:py-[15px] md:pl-[23px]`} />

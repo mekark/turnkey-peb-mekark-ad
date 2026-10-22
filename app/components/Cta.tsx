@@ -2,6 +2,7 @@
 
 import { emailPattern, locationPattern, namePattern, phonePattern } from "./formValidation";
 import { useEnquirySubmit } from "./useEnquirySubmit";
+import FormSelect, { industryOptions, sqftOptions } from "./FormSelect";
 import Image from "next/image";
 import { asset } from "../basePath";
 
@@ -151,16 +152,10 @@ export default function Cta() {
                 <input id="cta-email" name="email" type="email" required autoComplete="email" {...emailPattern} placeholder="Enter Email Address" className={field} />
               </Field>
               <Field id="cta-industry" text="Industry Type*">
-                <input id="cta-industry" name="industry" required placeholder="Enter your Industry type" className={field} />
+                <FormSelect id="cta-industry" name="industry" options={industryOptions} placeholder="Select your Industry type" className={field} />
               </Field>
               <Field id="cta-sqft" text="Project Sq. Ft*">
-                <select id="cta-sqft" name="sqft" required defaultValue="" className={`${field} select-chevron`}>
-                  <option value="" disabled>Select Sq.ft Requirement</option>
-                  <option value="10,000 - 20,000 Sq.ft">10,000 – 20,000</option>
-                  <option value="20,000 - 30,000 Sq.ft">20,000 – 30,000</option>
-                  <option value="30,000 - 50,000 Sq.ft">30,000 – 50,000</option>
-                  <option value="Above 50,000 Sq.ft">Above 50,000 sq.ft</option>
-                </select>
+                <FormSelect id="cta-sqft" name="sqft" options={sqftOptions} placeholder="Select Sq.ft Requirement" className={field} />
               </Field>
               <Field id="cta-details" text="Requirement Details" className="sm:col-span-2">
                 <textarea id="cta-details" name="details" rows={3} placeholder="Enter requirement details" className={`${field} resize-none max-sm:h-[46px]`} />
