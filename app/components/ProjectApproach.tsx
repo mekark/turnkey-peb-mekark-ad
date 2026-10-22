@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 
 const icon = {
-  className: "size-5 sm:size-10",
+  className: "size-[18px] sm:size-10",
   width: 40,
   height: 40,
   viewBox: "0 0 24 24",
@@ -96,30 +96,30 @@ const STEPS: { title: string; text: string; icon: ReactNode }[] = [
 
 export default function ProjectApproach() {
   return (
-    <section className="pa bg-[#f9f6f7] sm:bg-[#e0e0e0]">
-      <div className="pa-inner mx-auto max-w-[1920px] px-5 py-8 md:px-10 md:py-16 xl:p-20">
+    <section className="pa relative overflow-hidden bg-[#eee] sm:bg-[#e0e0e0]">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-[579px] overflow-hidden sm:hidden">
+        <div className="absolute left-1/2 top-0 h-[579px] w-[390px] -translate-x-1/2 opacity-25">
+          <div className="absolute left-0 top-0 h-[453px] w-[390px] bg-[url('/turnkey-peb/hero/m-pa-bg.webp')] bg-[length:1359px_453px] bg-[position:-484px_0] bg-no-repeat" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_300px_380px_at_362px_23px,rgba(0,0,0,0)_0%,rgba(95,95,95,0.42)_29%,rgba(168,168,168,0.75)_60%,#eee_100%)]" />
+        </div>
+      </div>
+      <div className="pa-inner relative mx-auto max-w-[1920px] px-5 py-8 md:px-10 md:py-16 xl:p-20">
         <div className="max-w-[1015px] xl:max-w-none">
-          <h2 className="pa-title text-[26px] font-bold leading-[34px] text-[#0f172a] sm:text-[52px] sm:leading-[1.11] xl:text-[66px] xl:leading-[73.333px]">
+          <h2 className="pa-title text-[28px] font-bold leading-[34px] text-[#0f172a] sm:text-[52px] sm:leading-[1.11] xl:text-[66px] xl:leading-[73.333px]">
             Our Turnkey <span className="text-[#ed1d23]">PEB Construction</span> Process
           </h2>
-          <p className="pa-sub mt-3 text-sm leading-5 text-[#64748b] sm:mt-4 md:text-[20px] md:leading-7 xl:max-w-[1652px] xl:text-[24px] xl:leading-[34px]">
+          <p className="pa-sub mt-1.5 text-sm leading-5 text-[#64748b] sm:mt-4 md:text-[20px] md:leading-7 xl:max-w-[1652px] xl:text-[24px] xl:leading-[34px]">
             One EPC Route from Project Planning To Handover.
           </p>
         </div>
 
-        <ol className="pa-list mt-6 grid gap-x-10 gap-y-5 sm:mt-[50px] sm:gap-y-12 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 xl:gap-x-[27px]">
+        <ol className="pa-list mt-4 grid gap-x-10 gap-y-[14px] sm:mt-[50px] sm:gap-y-12 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 xl:gap-x-[27px]">
           {STEPS.map((s, i) => (
-            <li key={s.title} className="pa-item relative flex items-center gap-[17px] sm:flex-col sm:items-start sm:gap-[52px]">
+            <li key={s.title} className="pa-item relative flex items-start sm:flex-col sm:gap-[52px]">
               {i < STEPS.length - 1 && (
                 <span
                   aria-hidden="true"
-                  className="absolute bottom-[-20px] left-4 top-[calc(50%+16.5px)] w-px bg-[#d4d4d4] sm:hidden"
-                />
-              )}
-              {i > 0 && (
-                <span
-                  aria-hidden="true"
-                  className="absolute left-4 top-0 h-[calc(50%-16.5px)] w-px bg-[#d4d4d4] sm:hidden"
+                  className="absolute bottom-[-14px] left-4 top-[33px] w-px bg-[#bcbcbc] sm:hidden"
                 />
               )}
               {i < STEPS.length - 1 && (
@@ -128,26 +128,21 @@ export default function ProjectApproach() {
                   className="pa-line absolute left-[100px] top-[47.67px] hidden h-px w-[calc(100%-60px)] bg-[#e4dfe0] xl:block"
                 />
               )}
-              <span
-                aria-hidden="true"
-                className="relative flex size-[33px] shrink-0 items-center justify-center rounded-full bg-[#f9f6f7] text-[14px] font-bold text-[#080808] sm:hidden"
-              >
-                {/* 8 dashes: circumference 2π·15.5 ≈ 97.4 → 8 × (9.2 dash + 3 gap) */}
-                <svg viewBox="0 0 33 33" className="absolute inset-0 size-full" fill="none" aria-hidden="true">
-                  <circle cx="16.5" cy="16.5" r="15.5" stroke="#bcbcbc" strokeWidth="1" strokeDasharray="9.2 2.98" />
-                </svg>
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <div className="flex min-w-0 flex-1 items-center gap-2.5 rounded-md bg-[#fffcfc] py-1.5 pl-2.5 pr-[9px] shadow-[-1px_1px_3px_rgba(30,30,30,0.1)] sm:contents">
-                <div className="pa-icon relative flex size-5 shrink-0 items-center justify-center sm:size-[90px] sm:rounded-full sm:border sm:border-[#e4dfe0] sm:bg-[#f5f5f5] sm:shadow-[4px_4px_7px_rgba(0,0,0,0.1)]">
+              <div className="flex min-w-0 flex-1 items-start gap-[5px] sm:contents">
+                <div className="pa-icon relative flex size-[33px] shrink-0 items-center justify-center rounded-full bg-white shadow-[0_1px_3px_rgba(30,30,30,0.25)] sm:size-[90px] sm:border sm:border-[#e4dfe0] sm:bg-[#f5f5f5] sm:shadow-[4px_4px_7px_rgba(0,0,0,0.1)]">
                   {s.icon}
                 </div>
-                <div className="pa-text flex min-w-0 flex-col gap-px sm:gap-3">
-                  <span className="pa-num hidden text-[26px] font-bold leading-[21.333px] text-[#ed1d23] sm:block">
+                <div className="flex min-w-0 flex-1 items-start gap-2.5 py-1.5 pl-2.5 pr-2 sm:contents">
+                  <span className="text-base font-bold leading-normal text-[#ed1d23] sm:hidden">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <h3 className="pa-h text-base font-semibold leading-normal text-[#0f172a] sm:text-[20px] sm:font-bold sm:leading-6 sm:text-black">{s.title}</h3>
-                  <p className="pa-p text-xs leading-[18px] text-[#64748b] sm:max-w-[257px] sm:text-[18px] sm:leading-[22.667px]">{s.text}</p>
+                  <div className="pa-text flex min-w-0 flex-col gap-px sm:gap-3">
+                    <span className="pa-num hidden text-[26px] font-bold leading-[21.333px] text-[#ed1d23] sm:block">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <h3 className="pa-h text-base font-semibold leading-normal text-[#0f172a] sm:text-[20px] sm:font-bold sm:leading-6 sm:text-black">{s.title}</h3>
+                    <p className="pa-p text-xs leading-5 text-[#64748b] sm:max-w-[257px] sm:text-[18px] sm:leading-[22.667px]">{s.text}</p>
+                  </div>
                 </div>
               </div>
             </li>

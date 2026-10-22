@@ -22,18 +22,43 @@ export default function WhyMekark() {
   const [mOpen, setMOpen] = useState<number | null>(null);
 
   return (
-    <section className="why relative isolate overflow-hidden bg-[#e60f1a] lg:bg-white">
-      {/* Phone: fixed 249px banner (Figma crop), gradient panel below */}
-      <div className="relative h-[249px] overflow-hidden bg-[#f9f6f7] sm:hidden">
-        <Image
-          src={asset("/hero/m-why.webp")}
-          alt="Man standing before a Mekark billboard on a high-rise construction site"
-          width={617}
-          height={278}
-          quality={70}
-          sizes="385px"
-          className="absolute left-0 top-[-13px] h-[278px] w-[max(617px,100%)] max-w-none object-cover"
-        />
+    <section className="why relative isolate overflow-hidden bg-white sm:bg-[#e60f1a] lg:bg-white">
+      {/* Phone: white page, title, building image, then the numbered list with a red rule per point */}
+      <div className="bg-white px-5 py-8 sm:hidden">
+        <h2 className="font-bold text-[#030303]">
+          <span className="block text-[28px] leading-[34px]">Why Industrial Leaders Choose Mekark</span>
+          <span className="block text-[26px] leading-[1.366] text-[#ed1d23]">for Turnkey PEB EPC</span>
+        </h2>
+
+        <div className="relative h-[252px]">
+          <Image
+            src={asset("/hero/m-why-bldg.webp")}
+            alt="Mekark turnkey PEB industrial building"
+            width={471}
+            height={252}
+            quality={70}
+            sizes="471px"
+            className="absolute left-[-55px] top-0 h-[252px] w-[471px] max-w-none object-cover"
+          />
+        </div>
+
+        <ol>
+          {REASONS.map((r, i) => (
+            <li key={r.title} className="relative flex gap-4 border-b border-[#ededed] py-3 last:border-b-0">
+              <span
+                aria-hidden="true"
+                className="w-10 shrink-0 bg-[linear-gradient(147deg,#ebebeb_1.2%,#cfcfcf_85%)] bg-clip-text text-[28px] font-extrabold leading-8 text-transparent"
+              >
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <span aria-hidden="true" className="absolute bottom-3 left-[45px] top-[17px] w-px bg-gradient-to-b from-[#ed1d23] to-[#ed1d23]/25" />
+              <div className="flex min-w-0 flex-1 flex-col gap-1.5">
+                <h3 className="text-[18px] font-semibold leading-[22px] text-[#030303]">{r.title}</h3>
+                <p className="text-[14px] leading-5 text-[#6e6e6e]">{r.text}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
       </div>
 
       {/* Tablet: crop of the scene on top, red panel below */}
@@ -48,7 +73,7 @@ export default function WhyMekark() {
         />
       </div>
 
-      <div className="bg-gradient-to-b from-[#fffdfd] from-[6%] to-[#e60f1a] to-[47%] px-5 pb-[30px] pt-5 sm:bg-none sm:px-10 sm:py-10 lg:hidden">
+      <div className="hidden px-5 pb-[30px] pt-5 sm:block sm:bg-none sm:px-10 sm:py-10 lg:hidden">
         <h2 className="text-[28px] font-bold leading-[34px] text-[#030303] sm:text-[44px] sm:leading-[1.1] sm:text-white">
           Why Industrial Leaders Choose Mekark <br />
           for Turnkey PEB EPC
