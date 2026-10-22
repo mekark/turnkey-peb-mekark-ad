@@ -76,9 +76,7 @@ export default function CompletedProjects() {
           <h2 className="text-[28px] font-bold leading-8 text-[#0f172a] sm:text-[52px] sm:leading-[1.05] xl:text-[66px] xl:leading-[60px]">
             Completed Projects
           </h2>
-          <p className="max-w-[300px] text-sm font-normal leading-normal text-[#64748b] sm:max-w-none sm:text-base sm:font-medium sm:leading-7 md:text-[20px] xl:text-[24px] xl:leading-9">
-            Completed PEB structures across India.
-          </p>
+
         </div>
 
         {/* Mobile: single column, Figma 10476:11612 */}

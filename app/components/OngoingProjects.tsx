@@ -34,7 +34,7 @@ export default function OngoingProjects() {
       <div className="mx-auto max-w-[1920px] px-5 py-8 sm:py-12 md:px-10 xl:px-20 xl:py-[52px]">
         <div className="flex flex-col gap-2 sm:gap-[14px]">
           <h2 className="text-[28px] font-bold leading-8 text-[#0f172a] sm:text-[52px] sm:leading-[1.05] xl:text-[66px] xl:leading-[60px]">Ongoing Projects</h2>
-          <p className="text-sm font-medium leading-normal text-[#64748b] md:text-[20px] xl:text-[24px] xl:leading-9">Completed PEB structures across India.</p>
+          <p className="text-sm font-medium leading-normal text-[#64748b] md:text-[20px] xl:text-[24px] xl:leading-9"></p>
         </div>
 
         <ul className="mt-6 grid gap-4 sm:grid-cols-2 sm:gap-[23px] lg:grid-cols-3 xl:mt-[52px]">

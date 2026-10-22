@@ -102,7 +102,7 @@ export default function LeadForm() {
         {submitting ? (
           "Submitting..."
         ) : (
-          "Get a Free Quote →"
+          "Request an Estimate →"
         )}
       </button>
       {error && (

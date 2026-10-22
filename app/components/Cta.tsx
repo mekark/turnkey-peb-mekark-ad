@@ -167,7 +167,7 @@ export default function Cta() {
               disabled={submitting}
               className="cta-submit mt-4 h-[46px] w-full rounded-lg bg-[#c4161c] text-sm font-semibold sm:mt-5 sm:h-[58px] sm:text-base sm:font-extrabold text-[#f5f5f5] shadow-[0_8px_16px_rgba(196,22,28,0.3)] active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-70"
             >
-              {submitting ? "Submitting..." : "Get a Free Quote →"}
+              {submitting ? "Submitting..." : "Request an Estimate →"}
             </button>
             {error && (
               <p role="alert" className="mt-3 text-center text-xs font-medium text-[#c4161c]">
