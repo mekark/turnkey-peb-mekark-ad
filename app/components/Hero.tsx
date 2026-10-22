@@ -104,7 +104,7 @@ export default function Hero() {
           <Image src={asset("/hero/mekark-logo.webp")} alt="Mekark" width={132} height={46} priority className="h-auto w-[88px]" />
         </a>
         <a href="#quote" className="rounded-lg bg-[#c4161c] px-3.5 py-2 text-xs font-semibold leading-[18px] text-[#f5f5f5] shadow-[0_6px_14px_rgba(196,22,28,0.3)]">
-          Get Free Quote
+          Request an Estimate
         </a>
       </nav>
       <div aria-hidden="true" className="h-14 md:hidden" />
@@ -112,7 +112,7 @@ export default function Hero() {
       <header className="hero-header mx-auto hidden h-20 max-w-[1920px] items-center justify-between px-5 md:flex md:px-10 xl:px-20">
         <Image src={asset("/hero/mekark-logo.webp")} alt="Mekark" width={132} height={46} priority className="hero-logo h-auto w-[104px] md:w-[132px]" />
         <a href="#quote" className="hero-quote rounded-lg bg-[#c4161c] px-5 py-2.5 text-sm leading-[22px] font-semibold text-[#f5f5f5] shadow-[0_9px_18px_rgba(196,22,28,0.3)] md:px-6 md:text-base md:leading-[22px]">
-          Get Free Quote
+          Request an Estimate
         </a>
       </header>
 
