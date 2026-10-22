@@ -27,7 +27,7 @@ export default function WhyMekark() {
       <div className="bg-white px-5 py-8 sm:hidden">
         <h2 className="font-bold text-[#030303]">
           <span className="block text-[28px] leading-[34px]">Why Industrial Leaders Choose Mekark</span>
-          <span className="block text-[26px] leading-[1.366] text-[#ed1d23]">for Turnkey PEB EPC</span>
+          <span className="block text-[26px] leading-[1.366] text-[#ed1d23]">for Turnkey PEB Projects</span>
         </h2>
 
         <div className="relative h-[252px]">
@@ -76,7 +76,7 @@ export default function WhyMekark() {
       <div className="hidden px-5 pb-[30px] pt-5 sm:block sm:bg-none sm:px-10 sm:py-10 lg:hidden">
         <h2 className="text-[28px] font-bold leading-[34px] text-[#030303] sm:text-[44px] sm:leading-[1.1] sm:text-white">
           Why Industrial Leaders Choose Mekark <br />
-          for Turnkey PEB EPC
+          for Turnkey PEB Projects
         </h2>
 
         <ul className="mt-[15px] sm:mt-8">
@@ -123,7 +123,7 @@ export default function WhyMekark() {
       <div className="why-d hidden lg:block">
         <h2 className="why-d-head">
           <span className="why-d-title">Why Industrial Leaders Choose Mekark</span>
-          <span className="why-d-title-accent">for Turnkey PEB EPC</span>
+          <span className="why-d-title-accent">for Turnkey PEB Projects</span>
         </h2>
         <div className="why-d-img">
           <Image
