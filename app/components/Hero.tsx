@@ -7,14 +7,33 @@ import { asset } from "../basePath";
 const PHONE = `+91${PHONE_NUMBER}`;
 const WHATSAPP = WHATSAPP_URL;
 
-const POINTS =
-  "Warehouse, Logistics, Cold Storages, Clean Rooms, Factories, Industries, Plants, Manufacturing Units, Malls, Auditorium, Convention Halls, IT & Data Center, Multi Storey bulidings, Schools, Colleges & Hospitals.";
+const POINTS = [
+  "Factories, Industries, Plants, Manufacturing Units",
+  "Malls, Auditorium, Convention Halls, IT & Data Center",
+  "Warehouse, Logistics, Cold Storages, Clean Rooms",
+  "Multi Storey buildings, Schools, Colleges, Hospitals",
+];
+
+function PointsList({ className }: { className: string }) {
+  return (
+    <ul className={`grid grid-cols-1 lg:grid-cols-[auto_auto] lg:justify-start [&_span]:whitespace-nowrap lg:[&_span]:whitespace-normal 2xl:[&_span]:whitespace-nowrap ${className}`}>
+      {POINTS.map((p) => (
+        <li key={p} className="flex items-start gap-2">
+          <svg className="mt-[0.3em] h-[1em] w-[1em] shrink-0 text-[#e40015]" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+          <span>{p}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
 
 const STATS = [
+  { value: "30-40", accent: "%", label: "Faster Completion" },
   { value: "300", accent: "+", label: "Projects" },
-  { value: "18", accent: "+", label: "Years Experience" },
+  { value: "175", accent: "+", label: "In-House Engineers" },
   { value: "40,000 ", accent: "MT", label: "Annual Production" },
-  { value: "175", accent: "+", label: "Engineering Team" },
 ];
 
 // 1x1 transparent GIF: the <source> for the viewport where an eager hero image is hidden, so it costs nothing there.
@@ -23,7 +42,7 @@ const BLANK = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAA
 export default function Hero() {
   // Only the hero image visible in each viewport gets eager + fetchPriority="high" (the LCP image).
   const { props: desktopBg } = getImageProps({
-    src: asset("/hero/bg-peb-3.webp"),
+    src: asset("/hero/bg-peb-4.webp"),
     alt: "",
     fill: true,
     quality: 60,
@@ -44,7 +63,7 @@ export default function Hero() {
     className: "object-cover",
   });
   const { props: mobileHero } = getImageProps({
-    src: asset("/hero/m-hero-peb.webp"),
+    src: asset("/hero/m-hero-peb-2.webp"),
     alt: "",
     width: 1000,
     height: 599,
@@ -103,7 +122,7 @@ export default function Hero() {
           <div className="hero-pill relative z-10 flex w-fit items-center gap-1 rounded-full border border-white/20 px-[10px] py-[6px] lg:gap-[10.667px] lg:border-[1.333px] lg:px-[17.333px] lg:py-[9.333px]">
             <span className="hero-dot size-2 rounded-full bg-[#e40015] lg:size-[10.667px]" />
             <span className="hero-pill-text whitespace-nowrap text-[9px] font-medium leading-[normal] lg:text-base lg:leading-[21.333px]">
-              Turnkey PEB Construction &amp; EPC Commercial, Industrial construction Company
+            End-to-End Turnkey PEB Solutions | Design, Supply & Erection
             </span>
           </div>
 
@@ -124,7 +143,7 @@ export default function Hero() {
           <div className="hero-copy hidden flex-col gap-4 lg:flex">
             <div className="hero-industries flex flex-col gap-2">
               <h2 className="hero-points-title text-[22px] font-semibold leading-7 text-[#f3f3f3]">Industries we serve :</h2>
-              <p className="hero-points max-w-[820px] text-[18px] leading-[22px] text-white/70">{POINTS}</p>
+              <PointsList className="hero-points gap-x-8 gap-y-2 text-[18px] leading-[22px] text-white/70" />
             </div>
           </div>
 
@@ -156,7 +175,7 @@ export default function Hero() {
 
           <div className="flex flex-col gap-1.5 px-3 sm:px-0 lg:hidden">
             <h2 className="text-sm font-medium leading-5 text-white sm:text-lg sm:leading-7">Industries we serve :</h2>
-            <p className="text-xs font-medium leading-5 text-white/70 sm:text-base sm:font-normal sm:leading-6">{POINTS}</p>
+            <PointsList className="gap-x-6 gap-y-1.5 text-[11px] font-medium leading-5 text-white/70 sm:text-base sm:font-normal sm:leading-6" />
           </div>
 
           <LogoMarquee />
@@ -164,7 +183,7 @@ export default function Hero() {
           <dl className="hero-stats grid grid-cols-2 gap-x-3 gap-y-[14px] sm:flex sm:w-fit sm:flex-wrap sm:gap-x-12 sm:gap-y-6 sm:border-t sm:border-[#e2e2e2] sm:py-4">
             {STATS.map((s) => (
               <div key={s.label} className="flex flex-col-reverse justify-end gap-1 rounded-[10px] border border-white/[0.08] bg-[#1a1a1a] px-4 py-[11px] min-[380px]:px-5 sm:gap-[5.3px] sm:rounded-none sm:border-0 sm:bg-transparent sm:p-0">
-                <dt className="text-[10px] font-semibold uppercase text-[#9a9a9a] sm:text-base">{s.label}</dt>
+                <dt className="text-[10px] font-semibold capitalize text-[#9a9a9a] sm:text-base">{s.label}</dt>
                 <dd className="whitespace-nowrap text-xl font-extrabold leading-[normal] min-[380px]:text-2xl sm:text-[42px]">
                   {s.value}
                   <span className={s.accent === "MT" ? "text-[#c4161c] sm:text-[#ed1d23]" : "text-[#c4161c]"}>{s.accent}</span>

@@ -61,7 +61,7 @@ export default function LeadForm() {
       onSubmit={onSubmit}
       className="lf w-full rounded-[24px] border border-[#484747] bg-white/[0.01] px-5 py-6 shadow-[0_26px_88px_rgba(0,0,0,0.06)] backdrop-blur-[15px] sm:rounded-[32px] sm:border-0 sm:bg-[#101010]/85 sm:py-8 sm:shadow-[0_26px_88px_rgba(0,0,0,0.6)] sm:px-10 md:bg-white/5 md:py-11 md:backdrop-blur-[30px] xl:px-[50px]"
     >
-      <h2 className="lf-title text-2xl font-extrabold leading-[normal] text-white sm:text-center md:text-[#080808]">
+      <h2 className="lf-title text-2xl font-extrabold leading-[normal] text-white sm:text-center md:text-[#fffff]">
       Request a Turnkey PEB EPC Proposal,
       <br />
       BOQ &amp; Timeline
