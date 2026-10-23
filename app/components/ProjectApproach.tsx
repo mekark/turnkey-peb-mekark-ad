@@ -64,7 +64,7 @@ const STEPS: { title: string; text: string; icon: ReactNode }[] = [
     ),
   },
   {
-    title: "PEB Erection & Envelope",
+    title: "PEB Erection & Enclosure",
     text: "Erect frames, roofing, cladding and structural building components.",
     icon: (
       <svg {...icon}>
