@@ -53,7 +53,7 @@ export default function Hero() {
   });
   // Phones: Lighthouse picks this tall background as the LCP element. Mobile-only, so sizes ≈ 0.63x its 505px width.
   const { props: mobileBg } = getImageProps({
-    src: asset("/hero/m-bg-peb.webp"),
+    src: asset("/hero/m-form-bg-peb.webp"),
     alt: "",
     fill: true,
     quality: 60,

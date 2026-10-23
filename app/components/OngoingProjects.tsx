@@ -6,8 +6,8 @@ const PROJECTS = [
     src: asset("/hero/ongoing-jk-tyre.webp"),
     alt: "Steel frame of the JK Tyre manufacturing plant under construction",
     name: "Automotive Tyre",
-    type: "Manufacturing Plant",
-    scope: "Tyre & Rubber Products",
+    type: "Manufacturing Unit",
+    scope: "Tyre Production",
     area: "75,000",
   },
   {
