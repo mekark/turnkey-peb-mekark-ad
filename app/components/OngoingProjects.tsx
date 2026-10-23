@@ -3,12 +3,12 @@ import { asset } from "../basePath";
 
 const PROJECTS = [
   {
-    src: asset("/hero/ongoing-1.webp"),
-    alt: "Reactor containment structure under construction at Kudankulam",
-    name: "Kudankulam",
-    type: "Nuclear Power Plant",
-    scope: "Cooling Tower, Physics Building, Office buildings",
-    area: "25 lakhs",
+    src: asset("/hero/ongoing-jk-tyre.webp"),
+    alt: "Steel frame of the JK Tyre manufacturing plant under construction",
+    name: "Automotive Tyre",
+    type: "Manufacturing Plant",
+    scope: "Tyre & Rubber Products",
+    area: "75,000",
   },
   {
     src: asset("/hero/ongoing-2.webp"),
