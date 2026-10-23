@@ -21,7 +21,8 @@ const DESKTOP = [
     src: asset("/hero/completed-4.webp"),
     alt: "White industrial warehouse with blue trim and loading docks",
     round: "",
-    position: "object-[45%_40%]",
+    position: "object-[70%_40%]",
+    zoom: "scale-111 origin-right",
   },
   {
     src: asset("/hero/completed-5.webp"),
@@ -39,8 +40,7 @@ const DESKTOP = [
 const MOBILE = [
   { src: asset("/hero/completed-2.webp"), alt: "Solo Paints industrial warehouse with a red roof", round: "rounded-t-[10px]" },
   { src: asset("/hero/completed-m2.webp"), alt: "Naram Pulp warehouse under blue skies", round: "" },
-  { src: asset("/hero/completed-4.webp"), alt: "White industrial warehouse with blue trim and loading docks", round: "", position: "object-[50%_30%]" },
-  { src: asset("/hero/completed-4.webp"), alt: "Industrial PEB warehouse with parking and loading docks", round: "", position: "object-[40%_35%]" },
+  { src: asset("/hero/completed-4.webp"), alt: "White industrial warehouse with blue trim and loading docks", round: "", position: "object-[70%_40%]", zoom: "scale-111 origin-right" },
   { src: asset("/hero/completed-6.webp"), alt: "Modern warehouse at sunset with orange accent columns", round: "" },
   { src: asset("/hero/completed-m6.webp"), alt: "Giant solar-powered industrial complex", round: "rounded-b-[10px]" },
 ];
@@ -50,7 +50,7 @@ function Photo({
   className,
   sizes,
 }: {
-  tile: { src: string; alt: string; position?: string };
+  tile: { src: string; alt: string; position?: string; zoom?: string };
   className: string;
   sizes: string;
 }) {
@@ -62,7 +62,7 @@ function Photo({
         fill
         sizes={sizes}
         quality={75}
-        className={`object-cover ${tile.position ?? ""}`}
+        className={`object-cover ${tile.position ?? ""} ${tile.zoom ?? ""}`}
       />
     </div>
   );
@@ -103,7 +103,7 @@ export default function CompletedProjects() {
                 fill
                 sizes="(min-width: 1920px) 868px, 48vw"
                 quality={75}
-                className={`object-cover ${t.position ?? ""}`}
+                className={`object-cover ${t.position ?? ""} ${t.zoom ?? ""}`}
               />
             </div>
           ))}
