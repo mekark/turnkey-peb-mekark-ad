@@ -60,7 +60,7 @@ export default function Hero() {
     sizes: "(min-width: 640px) 100vw, 320px",
     loading: "eager",
     fetchPriority: "high",
-    className: "object-cover",
+    className: "object-cover scale-[1.45] origin-[100%_80%]",
   });
   const { props: mobileHero } = getImageProps({
     src: asset("/hero/m-hero-peb-2.webp"),
