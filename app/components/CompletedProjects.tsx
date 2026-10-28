@@ -41,6 +41,7 @@ const MOBILE = [
   { src: asset("/hero/completed-2.webp"), alt: "Solo Paints industrial warehouse with a red roof", round: "rounded-t-[10px]" },
   { src: asset("/hero/completed-m2.webp"), alt: "Naram Pulp warehouse under blue skies", round: "" },
   { src: asset("/hero/completed-4.webp"), alt: "White industrial warehouse with blue trim and loading docks", round: "", position: "object-[70%_40%]", zoom: "scale-111 origin-right" },
+  { src: asset("/hero/completed-5.webp"), alt: "Aerial view of a multi-gabled green and beige PEB factory building", round: "" },
   { src: asset("/hero/completed-6.webp"), alt: "Modern warehouse at sunset with orange accent columns", round: "" },
   { src: asset("/hero/completed-m6.webp"), alt: "Giant solar-powered industrial complex", round: "rounded-b-[10px]" },
 ];
