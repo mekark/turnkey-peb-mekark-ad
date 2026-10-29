@@ -70,8 +70,7 @@ export default function LeadForm() {
         Get a custom layout, cost range &amp; 150-day* timeline
       </p> */}
 
-      <div className="lf-fields mt-4 grid gap-x-[35px] gap-y-3 sm:mt-[26px] sm:grid-cols-2 sm:gap-y-[14px]">
-        <Field id="name" text="Full Name*">
+      <div className="lf-fields mt-4 grid grid-cols-[minmax(0,1fr)] gap-x-[35px] gap-y-3 sm:mt-[26px] sm:grid-cols-2 sm:gap-y-[14px]">        <Field id="name" text="Full Name*">
           <input id="name" name="name" required autoComplete="name" {...namePattern} placeholder={md ? "Your name" : "Enter Your name"} className={field} />
         </Field>
         <Field id="location" text="Project Location*">

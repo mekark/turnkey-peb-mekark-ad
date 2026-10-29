@@ -136,7 +136,7 @@ export default function Cta() {
               Get a custom layout, cost range &amp; 150-day timeline
             </p>
 
-            <div className="cta-fields mt-4 grid gap-x-8 gap-y-4 sm:mt-5 sm:grid-cols-2 sm:gap-y-3">
+            <div className="cta-fields mt-4 grid grid-cols-[minmax(0,1fr)] gap-x-8 gap-y-4 sm:mt-5 sm:grid-cols-2 sm:gap-y-3">
               <Field id="cta-name" text="Full Name*">
                 <input id="cta-name" name="name" required autoComplete="name" {...namePattern} placeholder="Enter Your name" className={field} />
               </Field>
