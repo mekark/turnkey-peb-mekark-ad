@@ -32,7 +32,7 @@ function PointsList({ className }: { className: string }) {
 const STATS = [
   { value: "30-40", accent: "%", label: "Faster Completion" },
   { value: "300", accent: "+", label: "Projects" },
-  { value: "175", accent: "+", label: "In-House Engineers" },
+  { value: "250", accent: "+", label: "In-House Engineers" },
   { value: "40,000 ", accent: "MT", label: "Annual Production" },
 ];
 

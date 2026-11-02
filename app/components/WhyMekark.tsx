@@ -10,7 +10,7 @@ const REASONS = [
   { title: "Zero Multi-Vendor Coordination Hassles", text: "Eliminate clashes between civil contractors, steel fabricators, and roofing agencies." },
   { title: "Integrated Civil & Anchor Bolt Precision", text: "Because we handle both foundation pedestals and PEB frames, anchor bolt alignment is 100% accurate." },
   { title: "Guaranteed 150-Day Turnkey Timeline*", text: "Synchronized CPM/Primavera project scheduling where civil works and factory steel production run in parallel." },
-  { title: "In-House 175+ Engineering & EPC Team", text: "Civil engineers, structural designers, MEP coordinators, and site safety officers under one roof." },
+  { title: "In-House 250+ Engineering & EPC Team", text: "Civil engineers, structural designers, MEP coordinators, and site safety officers under one roof." },
   { title: "6,00,000 Sq. Ft. Captive PEB Plant", text: "No dependency on third-party steel suppliers—40,000 MT/year fabricated in-house." },
   { title: "Industrial VDF / FM2 Flooring & Civil Works", text: "Complete execution of heavy-duty warehouse laser-screed flooring, loading bays, dock levelers, and boundary walls." },
   { title: "Cladding, Insulation & Ventilation Systems", text: "Turnkey installation of standing seam roofs, PUF panels, ridge vents, louvers, and skylights." },
