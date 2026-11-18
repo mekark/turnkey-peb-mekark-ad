@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type ReactNode } from "react";
+import { useState } from "react";
 
 const FAQS: { q: string; a: string }[] = [
   {
@@ -21,13 +21,11 @@ const FAQS: { q: string; a: string }[] = [
   },
 ];
 
-export default function FaqTabs({ media }: { media?: ReactNode }) {
+export default function FaqTabs() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
     <>
-      {media && <div className="mt-5 lg:hidden">{media}</div>}
-
       <div className="mt-6 lg:mt-0 lg:max-w-[912px]">
         {FAQS.map((f, i) => {
           const isOpen = open === i;

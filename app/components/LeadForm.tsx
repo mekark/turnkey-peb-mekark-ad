@@ -6,7 +6,7 @@ import { useEnquirySubmit } from "./useEnquirySubmit";
 import FormSelect, { industryOptions, sqftOptions } from "./FormSelect";
 
 const field =
-  "lf-input w-full rounded-lg border border-[#e2e2e2] bg-[#f0f0f0] px-[18px] py-[13px] text-xs text-[#080808] placeholder:text-[#757575] md:h-[46px] md:py-0 md:text-[12px] focus:outline-2 focus:outline-offset-2 focus:outline-[#c4161c]";
+  "lf-input w-full rounded-lg border border-[#e2e2e2] bg-[#f0f0f0] px-[18px] py-[13px] text-xs text-[#080808] placeholder:text-[#757575] md:h-[46px] md:py-0 md:text-[12px] aria-invalid:border-[#ff5a5f] focus:outline-2 focus:outline-offset-2 focus:outline-[#c4161c]";
 const label = "lf-label max-md:sr-only mb-[6.6px] block text-sm leading-[19px] font-bold text-white";
 
 // Labels are visible from md up, so placeholders switch to the desktop Figma examples there.
@@ -77,10 +77,10 @@ export default function LeadForm() {
           <input id="location" name="location" required autoComplete="address-level2" {...locationPattern} placeholder="Enter Project Location" className={`${field} lf-pad`} />
         </Field>
         <Field id="phone" text="Mobile Number*">
-          <input id="phone" name="phone" type="tel" inputMode="tel" required autoComplete="tel" {...phonePattern} placeholder={md ? "+91 98765 43210" : "Mobile Number*"} className={field} />
+          <input id="phone" name="phone" type="tel" required autoComplete="tel" {...phonePattern} placeholder={md ? "+91 98765 43210" : "Mobile Number*"} className={field} />
         </Field>
         <Field id="email" text="Email Address*">
-          <input id="email" name="email" type="email" required autoComplete="email" {...emailPattern} placeholder={md ? "abcd@gmail.com" : "Enter Email Address"} className={field} />
+          <input id="email" name="email" type="email" required autoComplete="email" {...emailPattern} placeholder="johndoe@gmail.com" className={field} />
         </Field>
         <Field id="industry" text="Industry Type*">
           <FormSelect id="industry" name="industry" options={industryOptions} placeholder={md ? "Select Industry type" : "Select your Industry type"} className={`${field} lf-pad`} />
@@ -99,7 +99,7 @@ export default function LeadForm() {
         className="lf-submit mt-4 h-11 w-full rounded-[10px] bg-[#c4161c] text-sm sm:mt-[26px] sm:h-[63.87px] sm:rounded-[9px] sm:text-lg font-bold text-[#f5f5f5] shadow-[0_9px_18px_rgba(196,22,28,0.3)] active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-70"
       >
         {submitting ? (
-          "Submitting..."
+          "Submitting Request..."
         ) : (
           "Request an Estimate →"
         )}

@@ -87,22 +87,15 @@ export default function CompletedProjects() {
           ))}
         </div>
 
-        {/* Tablet */}
-        <div className="mt-6 hidden grid-cols-2 gap-3 sm:grid lg:hidden">
-          {DESKTOP.map((tile) => (
-            <Photo key={tile.src} tile={tile} sizes="50vw" className="aspect-[4/3]" />
-          ))}
-        </div>
-
-        {/* Desktop: 2×3 grid, Figma 10476:11792 */}
-        <div className="mt-[52px] hidden grid-cols-2 gap-[25px] lg:grid">
+        {/* Tablet + desktop: one 2-column grid (Figma 10476:11792 at lg+) */}
+        <div className="mt-6 hidden grid-cols-2 gap-3 sm:grid lg:mt-[52px] lg:gap-[25px]">
           {DESKTOP.map((t) => (
-            <div key={t.src} className={`relative aspect-[867/488] overflow-hidden bg-[#d9d9d9] ${t.round}`}>
+            <div key={t.src} className={`relative aspect-[4/3] overflow-hidden bg-[#d9d9d9] lg:aspect-[867/488] ${t.round}`}>
               <Image
                 src={t.src}
                 alt={t.alt}
                 fill
-                sizes="(min-width: 1920px) 868px, 48vw"
+                sizes="(min-width: 1920px) 868px, (min-width: 1024px) 48vw, 50vw"
                 quality={75}
                 className={`object-cover ${t.position ?? ""} ${t.zoom ?? ""}`}
               />

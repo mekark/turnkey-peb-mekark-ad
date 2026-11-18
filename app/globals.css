@@ -16,6 +16,13 @@ body {
   overflow-x: clip;
 }
 
+/* Native smooth anchor scrolling (CTA buttons -> #quote / #contact) without any JS. */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
@@ -314,6 +321,77 @@ body {
   }
 }
 
+/* "Why Mekark" on tablets: same look as desktop (white, centred title + image, two numbered columns), sized in plain px. */
+@media (min-width: 640px) and (max-width: 1023.98px) {
+  .why-d {
+    padding: 48px 40px 56px;
+  }
+  .why-d-head {
+    text-align: center;
+  }
+  .why-d-title {
+    font-size: 36px;
+    line-height: 1.2;
+    color: #030303;
+  }
+  .why-d-title-accent {
+    font-size: 30px;
+    line-height: 1.25;
+    color: #ed1d23;
+  }
+  .why-d-img {
+    position: relative;
+    width: min(100%, 720px);
+    aspect-ratio: 1078 / 564;
+    margin: 24px auto 32px;
+  }
+  .why-d-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-flow: row dense;
+    column-gap: 40px;
+    row-gap: 28px;
+    align-items: start;
+  }
+  .why-d-item {
+    display: grid;
+    grid-template-columns: 56px minmax(0, 1fr);
+    grid-column: 2;
+  }
+  .why-d-item:nth-child(-n + 5) {
+    grid-column: 1;
+  }
+  .why-d-num {
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 44px;
+    letter-spacing: -1.5px;
+    color: transparent;
+    background: linear-gradient(141deg, rgba(225, 225, 225, 0) 1.2%, #e1e1e1 85%);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+  .why-d-body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-left: 12px;
+    border-left: 2px solid #ed1d23;
+  }
+  .why-d-h {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+    color: #000;
+  }
+  .why-d-p {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 21px;
+    color: #6e6e6e;
+  }
+}
+
 /* "Why Mekark": at lg+ everything scales from the 1920px Figma frame (--u = 1 design px). */
 @media (min-width: 1024px) {
   .why {
@@ -359,6 +437,7 @@ body {
     position: relative;
     display: grid;
     grid-template-columns: calc(497 * var(--u)) minmax(0, 1fr) calc(497 * var(--u));
+    grid-auto-flow: row dense;
     column-gap: 0;
     row-gap: calc(30 * var(--u));
     align-items: start;
@@ -368,8 +447,8 @@ body {
     grid-template-columns: calc(86 * var(--u)) minmax(0, 1fr);
     grid-column: 3;
   }
-  /* left column stays clear of the image's canopy */
-  .why-d-item:nth-child(odd) {
+  /* points 1-5 fill the left column (clear of the image's canopy), 6-10 the right, row by row */
+  .why-d-item:nth-child(-n + 5) {
     grid-column: 1;
     width: calc(465 * var(--u));
   }
@@ -433,41 +512,48 @@ body {
     line-height: calc(37.33 * var(--u));
   }
   .cta-cards {
-    margin-top: calc(55 * var(--u));
-    max-width: calc(693 * var(--u));
-    gap: calc(21 * var(--u));
+    margin-top: calc(45 * var(--u));
+    max-width: calc(837 * var(--u));
+    gap: calc(20 * var(--u));
   }
   .cta-card {
-    height: calc(120 * var(--u));
-    gap: calc(21 * var(--u));
-    padding: 0 calc(27 * var(--u));
-    border-radius: calc(29 * var(--u));
+    height: calc(84 * var(--u));
+    gap: calc(16 * var(--u));
+    padding: 0 calc(20 * var(--u));
+    border-radius: calc(22 * var(--u));
+  }
+  .cta-card.cta-offices {
+    gap: 0;
+    height: auto;
+    margin-top: calc(20 * var(--u));
+    max-width: calc(837 * var(--u));
+    padding: calc(22 * var(--u)) calc(24 * var(--u));
   }
   .cta-card-icon {
-    width: calc(64 * var(--u));
-    height: calc(64 * var(--u));
-    border-radius: calc(24 * var(--u));
+    width: calc(48 * var(--u));
+    height: calc(48 * var(--u));
+    border-radius: calc(16 * var(--u));
   }
   .cta-card-icon img {
-    width: calc(27 * var(--u));
+    width: calc(20 * var(--u));
     height: auto;
   }
   .cta-card-icon img.cta-wa {
-    width: calc(39 * var(--u));
+    width: calc(30 * var(--u));
   }
   .cta-eyebrow {
-    font-size: calc(16 * var(--u));
-    line-height: calc(21.33 * var(--u));
+    font-size: calc(13 * var(--u));
+    line-height: calc(18 * var(--u));
   }
   .cta-card-title {
-    font-size: calc(21.33 * var(--u));
-    line-height: calc(32 * var(--u));
+    font-size: calc(17 * var(--u));
+    line-height: calc(24 * var(--u));
   }
   .cta-card-title.cta-wa-title {
-    font-size: calc(26 * var(--u));
+    font-size: calc(19 * var(--u));
   }
   .cta-card > img {
-    width: calc(27 * var(--u));
+    width: calc(20 * var(--u));
   }
   .cta-form {
     padding: calc(42 * var(--u)) calc(46 * var(--u));

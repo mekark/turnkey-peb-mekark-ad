@@ -5,9 +5,10 @@ import { useEnquirySubmit } from "./useEnquirySubmit";
 import FormSelect, { industryOptions, sqftOptions } from "./FormSelect";
 import Image from "next/image";
 import { asset } from "../basePath";
+import { OFFICES } from "./offices";
 
 const field =
-  "w-full rounded-lg border border-[#e2e2e2] bg-[#f0f0f0] px-4 py-3 text-xs text-[#080808] placeholder:text-[#757575] focus:outline-2 focus:outline-offset-2 focus:outline-[#c4161c]";
+  "w-full rounded-lg border border-[#e2e2e2] bg-[#f0f0f0] px-4 py-3 text-xs text-[#080808] placeholder:text-[#757575] aria-invalid:border-[#ff5a5f] focus:outline-2 focus:outline-offset-2 focus:outline-[#c4161c]";
 const label = "max-md:sr-only mb-1.5 block text-sm font-bold tracking-[0.3px] text-[#5a5a5a]";
 
 function Field({
@@ -54,19 +55,28 @@ function ContactCard({
   return (
     <a
       href={href}
-      className="cta-card flex items-center gap-4 rounded-[20px] border border-black/5 bg-[#212121] px-4 py-2.5 sm:h-[120px] sm:gap-5 sm:rounded-[29px] sm:px-7 sm:py-0"
+      className="cta-card flex items-center gap-4 rounded-[20px] border border-black/5 bg-[#212121] px-4 py-2.5 sm:h-[84px] sm:min-w-[300px] sm:flex-1 sm:gap-4 sm:rounded-[22px] sm:px-5 sm:py-0"
     >
-      <span className="cta-card-icon flex size-10 shrink-0 items-center justify-center rounded-lg bg-[#cc000a] sm:size-16 sm:rounded-[24px]">
+      <span className="cta-card-icon flex size-10 shrink-0 items-center justify-center rounded-lg bg-[#cc000a] sm:size-12 sm:rounded-[16px]">
         {icon}
       </span>
       <span className="flex min-w-0 flex-1 flex-col gap-0.5 sm:flex-none sm:gap-0">
-        {eyebrow && <span className="cta-eyebrow text-[10px] font-bold uppercase leading-4 text-[#a9a9a9] sm:text-base sm:leading-[21px]">{eyebrow}</span>}
+        {eyebrow && <span className="cta-eyebrow text-[10px] font-bold uppercase leading-4 text-[#a9a9a9] sm:text-[13px] sm:leading-[18px]">{eyebrow}</span>}
         <span className={`cta-card-title text-white ${titleClass}`}>{title}</span>
       </span>
-      <Image src={asset("/hero/cta-arrow.svg")} alt="" width={27} height={26} className="ml-auto h-auto w-6 shrink-0 sm:w-[27px]" />
+      <Image src={asset("/hero/cta-arrow.svg")} alt="" width={27} height={26} className="ml-auto h-auto w-6 shrink-0 sm:w-5" />
     </a>
   );
 }
+
+// Desktop (3 columns): the tall Delhi entry spans two rows so Mumbai and Kolkata sit right under Chennai and Bangalore.
+const OFFICE_SLOT = [
+  "",
+  "",
+  "lg:col-start-3 lg:row-span-2 lg:row-start-1",
+  "lg:col-start-1 lg:row-start-2",
+  "lg:col-start-2 lg:row-start-2",
+];
 
 export default function Cta() {
   const { onSubmit, submitting, error } = useEnquirySubmit();
@@ -107,21 +117,42 @@ export default function Cta() {
               Share your requirement — our engineering team responds with a layout, BOQ and timeline. Response within 2 hours.
             </p>
 
-            <div className="cta-cards mt-[19px] flex max-w-[693px] flex-col gap-3 sm:mt-10 sm:gap-5">
+            <div className="cta-cards mt-[19px] flex max-w-[837px] flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:gap-5">
               <ContactCard
                 href="tel:+919790924754"
                 eyebrow="Call Now"
                 title="+91 97909 24754"
-                titleClass="text-sm font-extrabold leading-6 sm:text-[21px] sm:leading-8"
-                icon={<Image src={asset("/hero/cta-call.svg")} alt="" width={27} height={27} className="size-6 sm:size-[27px]" />}
+                titleClass="text-sm font-extrabold leading-6 sm:text-[17px] sm:leading-6"
+                icon={<Image src={asset("/hero/cta-call.svg")} alt="" width={27} height={27} className="size-6 sm:size-5" />}
               />
               <ContactCard
                 href="https://wa.me/919790924754"
                 title="WhatsApp Us Now"
-                titleClass="cta-wa-title text-sm font-bold leading-6 sm:text-[26px] sm:leading-normal"
-                icon={<Image src={asset("/hero/whatsapp.webp")} alt="" width={39} height={39} className="cta-wa size-[30px] sm:size-[39px]" />}
+                titleClass="cta-wa-title text-sm font-bold leading-6 sm:text-[19px] sm:leading-6"
+                icon={<Image src={asset("/hero/whatsapp.webp")} alt="" width={39} height={39} className="cta-wa size-[30px] sm:size-[30px]" />}
               />
             </div>
+            <address className="cta-offices cta-card mt-3 flex max-w-[837px] flex-col rounded-[20px] border border-black/5 bg-[#212121] px-4 py-4 not-italic sm:mt-5 sm:rounded-[22px] sm:px-5 sm:py-5">
+              <div className="flex items-center gap-4">
+                <span className="cta-card-icon flex size-10 shrink-0 items-center justify-center rounded-lg bg-[#cc000a] sm:size-12 sm:rounded-[16px]">
+                  <svg viewBox="0 0 24 24" className="size-5 text-white" fill="currentColor" aria-hidden="true">
+                    <path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z" />
+                  </svg>
+                </span>
+                <span className="flex flex-col">
+                  <span className="cta-eyebrow text-[10px] font-bold uppercase leading-4 text-[#a9a9a9] sm:text-[13px] sm:leading-[18px]">Offices across India</span>
+                  <span className="cta-card-title text-sm font-extrabold leading-6 text-white sm:text-[17px]">Our Locations</span>
+                </span>
+              </div>
+              <div className="cta-offices-list mt-2 grid grid-cols-1 gap-x-6 gap-y-4 border-t border-white/10 pt-3 sm:mt-2.5 sm:grid-cols-2 sm:pt-3 lg:grid-cols-3">
+                {OFFICES.map((o, i) => (
+                  <div key={o.city} className={`flex flex-col gap-1 ${OFFICE_SLOT[i] ?? ""}`}>
+                    <span className="text-[11px] font-bold uppercase tracking-[0.12em] text-[#ff4d55] sm:text-[12px]">{o.city}</span>
+                    <span className="text-xs leading-[1.55] text-white/70 sm:text-[13px]">{o.address}</span>
+                  </div>
+                ))}
+              </div>
+            </address>
           </div>
 
           <form
@@ -144,7 +175,7 @@ export default function Cta() {
                 <input id="cta-location" name="location" required autoComplete="address-level2" {...locationPattern} placeholder="Enter project location" className={field} />
               </Field>
               <Field id="cta-phone" text="Mobile Number*">
-                <input id="cta-phone" name="phone" type="tel" inputMode="tel" required autoComplete="tel" {...phonePattern} placeholder="Mobile Number*" className={field} />
+                <input id="cta-phone" name="phone" type="tel" required autoComplete="tel" {...phonePattern} placeholder="Mobile Number*" className={field} />
               </Field>
               <Field id="cta-email" text="Email Address*">
                 <input id="cta-email" name="email" type="email" required autoComplete="email" {...emailPattern} placeholder="Enter Email Address" className={field} />
@@ -165,7 +196,7 @@ export default function Cta() {
               disabled={submitting}
               className="cta-submit mt-4 h-[46px] w-full rounded-lg bg-[#c4161c] text-sm font-semibold sm:mt-5 sm:h-[58px] sm:text-base sm:font-extrabold text-[#f5f5f5] shadow-[0_8px_16px_rgba(196,22,28,0.3)] active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-70"
             >
-              {submitting ? "Submitting..." : "Request an Estimate →"}
+              {submitting ? "Submitting Request..." : "Request an Estimate →"}
             </button>
             {error && (
               <p role="alert" className="mt-3 text-center text-xs font-medium text-[#c4161c]">

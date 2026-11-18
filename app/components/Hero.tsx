@@ -126,56 +126,37 @@ export default function Hero() {
             </span>
           </div>
 
-          <div className="hero-copy hidden flex-col gap-4 lg:flex">
-            <h1 className="hero-h1 flex flex-col items-start gap-[14px] text-[50px] font-bold leading-[58px]">
-              <span>Turnkey PEB & Industrial EPC </span>
-              <span className="hero-h1-box relative w-fit bg-[#ed1d23] px-[5px] text-[54px] leading-[58px]">
-               Contractor — Concept to Handover
+          {/* One headline block for every breakpoint: image + overlaid h1 on phones/tablets, plain stacked copy at lg+ */}
+          <div className="relative -mx-5 h-[277px] overflow-hidden px-5 pt-2.5 md:-mx-10 md:px-10 lg:mx-0 lg:h-auto lg:overflow-visible lg:p-0">
+            <div aria-hidden="true" className="absolute inset-0 lg:hidden">
+              <picture>
+                <source media="(min-width: 1024px)" srcSet={BLANK} />
+                {/* eslint-disable-next-line jsx-a11y/alt-text */}
+                <img {...mobileHero} />
+              </picture>
+              <div className="absolute inset-x-0 top-0 h-[115px] bg-[linear-gradient(180deg,#070707_10.9%,rgba(62,62,62,0.65)_54.2%,rgba(105,105,105,0)_100%)]" />
+            </div>
+            <h1 className="hero-h1 font-bold lg:flex lg:flex-col lg:items-start lg:gap-[14px] lg:text-[50px] lg:leading-[58px]">
+              <span className="relative block text-[22px] leading-[28px] sm:text-[40px] sm:leading-[1.1] lg:[font-size:inherit] lg:[line-height:inherit]">
+                Turnkey PEB &amp; Industrial EPC
+              </span>{" "}
+              <span className="hero-h1-box absolute left-0 top-[48px] flex h-[23px] w-fit items-center bg-[#c4161c] pl-5 pr-4 text-sm font-bold text-white sm:top-[64px] md:pl-10 lg:relative lg:left-0 lg:top-0 lg:block lg:bg-[#ed1d23] lg:px-[5px]">
+                Contractor — Concept to Handover
               </span>
             </h1>
-            <p className="hero-lead max-w-[879px] text-lg leading-[22px] text-[#a9a9a9]">
-              Single-Point Accountability for Civil Foundations, Structural Design,
-              <br />
-              In-House PEB Fabrication, Industrial Flooring &amp; Site Erection.
-            </p>
           </div>
 
-          <div className="hero-copy hidden flex-col gap-4 lg:flex">
-            <div className="hero-industries flex flex-col gap-2">
-              <h2 className="hero-points-title text-[22px] font-semibold leading-7 text-[#f3f3f3]">Industries we serve :</h2>
-              <PointsList className="hero-points gap-x-8 gap-y-2 text-[18px] leading-[22px] text-white/70" />
-            </div>
-          </div>
+          <p className="hero-lead text-[14px] leading-[19px] text-[#f3f3f3] md:text-[20px] md:leading-7 md:text-[#a9a9a9] lg:mt-[calc(-8*var(--u))] lg:max-w-[879px] lg:text-lg lg:leading-[22px]">
+            Single-Point Accountability for Civil Foundations, Structural Design,
+            <br className="hidden md:block" />{" "}
+            In-House PEB Fabrication, Industrial Flooring &amp; Site Erection.
+          </p>
 
-          <div className="flex flex-col gap-3 lg:hidden">
-            <div className="relative -mx-5 h-[277px] overflow-hidden px-5 pt-2.5 md:-mx-10 md:px-10">
-              <div aria-hidden="true" className="absolute inset-0">
-                <picture>
-                  <source media="(min-width: 1024px)" srcSet={BLANK} />
-                  {/* eslint-disable-next-line jsx-a11y/alt-text */}
-                  <img {...mobileHero} />
-                </picture>
-                <div className="absolute inset-x-0 top-0 h-[115px] bg-[linear-gradient(180deg,#070707_10.9%,rgba(62,62,62,0.65)_54.2%,rgba(105,105,105,0)_100%)]" />
-              </div>
-              <h1 className="relative max-w-[879px] font-bold">
-                <span className="block text-[22px] leading-[28px] sm:text-[40px] sm:leading-[1.1]">Turnkey PEB &amp; Industrial EPC</span>
-              </h1>
-              <p className="absolute left-0 top-[48px] flex h-[23px] sm:top-[64px] w-fit items-center bg-[#c4161c] pl-5 pr-4 text-sm font-bold text-white md:left-0 md:pl-10">
-                Contractor — Concept to Handover
-              </p>
-            </div>
-            <div className="text-[14px] leading-[19px] text-[#f3f3f3] md:text-[20px] md:leading-7 md:text-[#a9a9a9]">
-              <p>
-                Single-Point Accountability for Civil Foundations, Structural Design,
-                <br className="hidden md:block" />{" "}
-                In-House PEB Fabrication, Industrial Flooring &amp; Site Erection.
-              </p>
-            </div>
-          </div>
-
-          <div className="flex flex-col gap-1.5 px-3 sm:px-0 lg:hidden">
-            <h2 className="text-sm font-medium leading-5 text-white sm:text-lg sm:leading-7">Industries we serve :</h2>
-            <PointsList className="gap-x-6 gap-y-1.5 text-[11px] font-medium leading-5 text-white/70 sm:text-base sm:font-normal sm:leading-6" />
+          <div className="hero-industries flex flex-col gap-1.5 px-3 sm:px-0 lg:gap-2">
+            <h2 className="hero-points-title text-sm font-medium leading-5 text-white sm:text-lg sm:leading-7 lg:text-[22px] lg:font-semibold lg:leading-7 lg:text-[#f3f3f3]">
+              Industries we serve :
+            </h2>
+            <PointsList className="hero-points gap-x-6 gap-y-1.5 text-[11px] font-medium leading-5 text-white/70 sm:text-base sm:font-normal sm:leading-6 lg:gap-x-8 lg:gap-y-2 lg:text-[18px] lg:leading-[22px]" />
           </div>
 
           <LogoMarquee />
@@ -209,7 +190,6 @@ export default function Hero() {
         <div id="quote" className="scroll-mt-16 max-sm:px-4 max-sm:pt-[21px]">
           <LeadForm />
         </div>
-
         {/* Mobile: actions sit below the form */}
         <div className="flex justify-center gap-[14px] px-4 md:hidden">
           <a href={WHATSAPP} className="flex h-[48px] w-[140px] items-center justify-center gap-2 rounded-full bg-white px-5 text-sm font-bold text-[#e5091f]">
